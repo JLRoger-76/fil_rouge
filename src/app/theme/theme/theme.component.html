@@ -1,0 +1,49 @@
+<div id="backimage">
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Découvrez nos formations</h3>
+  </div>
+
+  <div class="container">
+    <button class="btn btn-secondary" (click)="showThemes(themeParent)">
+      Retour
+    </button>
+    <div class="row">
+      <div
+        class="col-lg 3 col-md-4 col-sm-6 col-xs-12"
+        *ngFor="let theme of selectedThemes"
+      >
+        <div
+          class="card border-dark text-dark bg-light mb-3"
+          style="max-width: 18rem"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ theme.name }}</h5>
+          </div>
+          <div
+            *ngIf="theme.child"
+            class="card-footer bg-transparent border-success"
+          >
+            <button class="btn btn-warning" (click)="showThemes(theme.idTheme)">
+              Voir les thèmes
+            </button>
+          </div>
+          <div
+            *ngIf="!theme.child"
+            class="card-footer bg-transparent border-success"
+          >
+            <a
+              class="btn btn-info"
+              routerLink="/formation/{{ theme.idTheme }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Voir les formations</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

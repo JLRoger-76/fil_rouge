@@ -1,0 +1,68 @@
+<form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
+  <table class="table table-bordered table-hover table-light">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Id Parent</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary">
+        <td></td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+          />
+          <div
+            *ngIf="f['name'].touched && f['name'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">
+              Name is required.
+            </div>
+            <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+              Name should be 3 character.
+            </div>
+          </div>
+        </td>
+        <td>
+          <input
+            type="number"
+            class="form-control"
+            id="idParent"
+            formControlName="idParent"
+            min="1"
+          />
+        </td>
+
+        <td>
+          <button
+            type="submit"
+            class="btn btn-info"
+            [disabled]="!themeForm.valid"
+          >
+            Enregistrer
+          </button>
+          <button class="btn btn-warning" (click)="onClear()">Annuler</button>
+        </td>
+      </tr>
+
+      <tr *ngFor="let theme of themes">
+        <td>{{ theme.idTheme }}</td>
+        <td>{{ theme.name }}</td>
+        <td>{{ theme.idParent }}</td>
+        <td>
+          <button class="btn btn-info" (click)="onEdit(theme)">Editer</button>
+          <button class="btn btn-warning" (click)="onDelete(theme.idTheme)">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

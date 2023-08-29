@@ -1,0 +1,128 @@
+<div id="backimage">
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Edition de la formation</h3>
+  </div>
+  <div class="container">
+    <form
+      class="card p-1 bg-light text-dark"
+      [formGroup]="trainingForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="mb-3">
+        <label>Id</label>
+        <input
+          type="number"
+          formControlName="idTraining"
+          class="form-control"
+          id="id"
+          placeholder="ID"
+          readonly
+        />
+        <br />
+        <label>Nom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+        <div
+          *ngIf="f['name'].touched && f['name'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['name'].errors && f['name'].errors['required']">
+            Nom est requis.
+          </div>
+          <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+            Nom d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3" *ngFor="let theme of selectedThemes">
+        <div class="form-check" *ngIf="theme.selected == 0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="{{ theme.idTheme }}"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            {{ theme.name }}
+          </label>
+        </div>
+        <div class="form-check" *ngIf="theme.selected != 0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="{{ theme.idTheme }}"
+            id="flexCheckChecked"
+            checked
+            formControlName="idTheme"
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            {{ theme.name }}
+          </label>
+        </div>
+        <div
+          *ngIf="f['idTheme'].touched && f['idTheme'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['idTheme'].errors && f['idTheme'].errors['required']">
+            theme is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Prix</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          formControlName="price"
+        />
+        <div
+          *ngIf="f['price'].touched && f['price'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['price'].errors && f['price'].errors['required']">
+            Prix est requis.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Detail</label>
+        <textarea
+          class="form-control"
+          id="detail"
+          rows="3"
+          formControlName="detail"
+        ></textarea>
+        <div
+          *ngIf="f['detail'].touched && f['detail'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['detail'].errors && f['detail'].errors['required']">
+            Detail est requis.
+          </div>
+          <div *ngIf="f['detail'].errors && f['detail'].errors['minlength']">
+            Detail d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-info"
+          [disabled]="!trainingForm.valid"
+        >
+          Enregistrer
+        </button>
+        <button type="submit" class="btn btn-warning">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
