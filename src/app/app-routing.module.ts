@@ -6,6 +6,7 @@ import { FormationDetailComponent } from './formation/formation-detail/formation
 import { FormationAdminComponent } from './formation/formation-admin/formation-admin.component';
 import { FormationAdminEditComponent } from './formation/formation-admin-edit/formation-admin-edit.component';
 import { ThemeAdminComponent } from './theme/theme-admin/theme-admin.component';
+
 const routes: Routes = [
   {   path: 'theme', component: ThemeComponent },
   {   path: 'theme/admin', component: ThemeAdminComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {   path: 'formation/admin/insert', component: FormationAdminEditComponent },
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
+  
  
 ];
 
