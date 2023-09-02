@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkillAdminComponent } from './skill-admin/skill-admin.component';
-import { SkillEditComponent } from './skill-edit/skill-edit.component';
-
+import { SkillAdminEditComponent } from './skill-admin-edit/skill-admin-edit.component';
 
 
 @NgModule({
   declarations: [
     SkillAdminComponent,
-    SkillEditComponent
+    SkillAdminEditComponent,
+
   ],
   imports: [
     CommonModule

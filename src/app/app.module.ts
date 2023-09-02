@@ -6,6 +6,9 @@ import { ThemeModule } from './theme/theme.module';
 import { FormationModule } from './formation/formation.module';
 import { ThemeAdminComponent } from './theme/theme-admin/theme-admin.component';
 import { InstructorModule } from './instructor/instructor.module';
+import { SkillModule } from './skill/skill.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +19,7 @@ import { InstructorModule } from './instructor/instructor.module';
     AppRoutingModule,
     FormationModule,
     InstructorModule,
+    SkillModule,
     ThemeModule
   ],
   providers: [],
