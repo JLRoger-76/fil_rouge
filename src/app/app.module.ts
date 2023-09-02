@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ThemeModule } from './theme/theme.module';
 import { FormationModule } from './formation/formation.module';
 import { ThemeAdminComponent } from './theme/theme-admin/theme-admin.component';
-
+import { InstructorModule } from './instructor/instructor.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +15,7 @@ import { ThemeAdminComponent } from './theme/theme-admin/theme-admin.component';
     BrowserModule,    
     AppRoutingModule,
     FormationModule,
+    InstructorModule,
     ThemeModule
   ],
   providers: [],

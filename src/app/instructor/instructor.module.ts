@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InstructorAdminComponent } from './instructor-admin/instructor-admin.component';
-import { InstructorEditComponent } from './instructor-edit/instructor-edit.component';
-
+import { InstructorAdminEditComponent } from './instructor-admin-edit/instructor-admin-edit.component';
 
 
 
@@ -11,7 +10,8 @@ import { InstructorEditComponent } from './instructor-edit/instructor-edit.compo
    
   
     InstructorAdminComponent,
-           InstructorEditComponent
+           InstructorAdminEditComponent,
+
   ],
   imports: [
     CommonModule
