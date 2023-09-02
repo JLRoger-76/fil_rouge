@@ -14,13 +14,13 @@
           style="max-width: 18rem"
         >
           <div class="card-body">
-            <h5 class="card-title">{{ training.name }}</h5>
+            <h5 class="card-title">{{ training.title }}</h5>
           </div>
           <p>{{ training.price }} €</p>
           <div class="card-footer bg-transparent border-success">
             <a
               class="btn btn-info"
-              routerLink="/formation/detail/{{ training.idTraining }}"
+              routerLink="/formation/detail/{{ training.id }}"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Detail</a

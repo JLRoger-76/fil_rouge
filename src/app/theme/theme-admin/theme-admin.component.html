@@ -4,7 +4,7 @@
       <tr>
         <th>Id</th>
         <th>Nom</th>
-        <th>Id Parent</th>
+        <th>Parent</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -32,11 +32,10 @@
         </td>
         <td>
           <input
-            type="number"
+            type="string"
             class="form-control"
-            id="idParent"
-            formControlName="idParent"
-            min="1"
+            id="parent"
+            formControlName="parent"
           />
         </td>
 
@@ -53,12 +52,12 @@
       </tr>
 
       <tr *ngFor="let theme of themes">
-        <td>{{ theme.idTheme }}</td>
+        <td>{{ theme.id }}</td>
         <td>{{ theme.name }}</td>
-        <td>{{ theme.idParent }}</td>
+        <td>{{ theme.parent }}</td>
         <td>
           <button class="btn btn-info" (click)="onEdit(theme)">Editer</button>
-          <button class="btn btn-warning" (click)="onDelete(theme.idTheme)">
+          <button class="btn btn-warning" (click)="onDelete(theme.id)">
             Supprimer
           </button>
         </td>

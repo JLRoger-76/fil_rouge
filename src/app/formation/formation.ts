@@ -1,8 +1,7 @@
 export interface Training {
-    idTraining: number;
-    name:string;
+    id: number;
+    title:string;
+    content:string;
     price:number;
-    detail:string
-    idTheme:number[];
- 
+    themes:string[];
 }

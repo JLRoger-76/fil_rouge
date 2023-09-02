@@ -1,6 +1,9 @@
+import { Training } from "../formation/formation";
+
 export interface Theme {
-    idTheme: number;
+    id: number;
     name:string;
-    idParent:number;
-    idTraining:number[];
+    parent:string;
+    children:string[];
+    formations:string[];
 }

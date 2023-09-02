@@ -5,9 +5,6 @@
   </div>
 
   <div class="container">
-    <button class="btn btn-secondary" (click)="showThemes(themeParent)">
-      Retour
-    </button>
     <div class="row">
       <div
         class="col-lg 3 col-md-4 col-sm-6 col-xs-12"
@@ -24,7 +21,7 @@
             *ngIf="theme.child"
             class="card-footer bg-transparent border-success"
           >
-            <button class="btn btn-warning" (click)="showThemes(theme.idTheme)">
+            <button class="btn btn-warning" (click)="showThemes(theme.id)">
               Voir les thèmes
             </button>
           </div>
@@ -34,7 +31,7 @@
           >
             <a
               class="btn btn-info"
-              routerLink="/formation/{{ theme.idTheme }}"
+              routerLink="/formation/{{ theme.id }}"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Voir les formations</a
