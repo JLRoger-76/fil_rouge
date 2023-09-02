@@ -31,12 +31,16 @@
           </div>
         </td>
         <td>
-          <input
-            type="string"
-            class="form-control"
-            id="parent"
+          <select
+            class="form-select"
             formControlName="parent"
-          />
+            placeholder="Choisir theme parent"
+          >
+            <option value="" disabled selected>Choisir le theme parent</option>
+            <option *ngFor="let theme of themes" [value]="theme.name">
+              {{ theme.name }}
+            </option>
+          </select>
         </td>
 
         <td>

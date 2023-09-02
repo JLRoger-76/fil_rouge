@@ -16,10 +16,12 @@ export class ThemeAdminComponent implements OnInit {
   themeForm = new FormGroup({
     id:new FormControl(0),
     name: new FormControl('',[Validators.required,Validators.minLength(3)]),
-    parent:new FormControl('')
+    parent:new FormControl(''),
+    children:new FormControl([""]),
+    formations:new FormControl([""])
   });
 
-  themes: Theme[] = [];
+  themes: Theme[] = this.service.getAll();
   editTheme:Theme=<Theme>{};
   ngOnInit(): void {
      this.themes = this.service.getAll();
@@ -34,8 +36,8 @@ export class ThemeAdminComponent implements OnInit {
     this.editTheme=<Theme>{};
   }
   onDelete(id:number){
-    // this.service.deleteTheme(id);
-    // this.themes = this.service.getAll();
+     this.service.deleteTheme(id);
+     this.themes = this.service.getAll();
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value

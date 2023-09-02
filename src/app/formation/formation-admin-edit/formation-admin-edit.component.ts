@@ -34,7 +34,7 @@ export class FormationAdminEditComponent  implements OnInit{
       this.training=this.service.getTrainingById(id)!;
       this.trainingForm.setValue(this.training)
     } 
-     this.selectedThemes=this.service.showThemes(id); 
+     this.selectedThemes=this.service.showThemes(); 
   }
 
   onSubmit() {

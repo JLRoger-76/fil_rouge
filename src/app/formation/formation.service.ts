@@ -24,22 +24,16 @@ export class FormationService {
     {id : 7, name :"Gestion de Projets",parent:"Informatique",children:[],formations:[]},
    ] 
 
-  public hierarchicalThemes:Array<any> = [];
-  showThemes(idformation:number,parent:string="Domaine",submark:string=" "):Theme[] {  
-    this.themes.forEach(theme =>{ 
-      if (theme.parent==parent){       
+  public selectedThemes:Array<any> = [];
+  showThemes():Theme[] {  
+    this.themes.forEach(theme =>{    
         let hasChild = false;//initialise présence sous-themes
         if (theme.children.length>0) hasChild=true; 
-        let hierarchicalTheme:any=theme;        
-        hierarchicalTheme.name=submark+theme.name;
-        hierarchicalTheme.disabled=hasChild;  // ajout attribut bool disabled 
-          //ajout attribut bool selected         
-        hierarchicalTheme.selected=(this.getTrainingsOfTheme(theme.id).length>0)  
-        this.hierarchicalThemes.push(hierarchicalTheme);
-        this.showThemes(idformation,theme.name,"\u{007F}"+submark)
-      };
-    });//fin forEach
-    return this.hierarchicalThemes;
+        let selectedTheme:any=theme;            
+        selectedTheme.selected=(this.getTrainingsOfTheme(theme.id).length>0)  
+        if (hasChild==false)this.selectedThemes.push(selectedTheme);
+    });
+    return this.selectedThemes;
   };
 
   public getAll(): Training[] {      
@@ -51,8 +45,7 @@ export class FormationService {
     this.trainings.forEach(training =>{ 
        let theme=this.themes.find(t => t.id==id) ; 
        if(theme && theme.id==id) selectedTrainings.push(training);     
-    });
-   
+    });   
     return selectedTrainings;
   }
 
