@@ -20,28 +20,24 @@ export class ThemeService {
       return this.themes;
     }
     
-    public themeParent:string = "";
-	  
-    getThemes(id:number):any {
-		let selectedThemes:any[] = [];// Themes + info haschild
-    let selectedTheme:any;
-    
-		this.themeParent = this.themes[id].parent;
-   
-    this.themes.forEach(theme =>{ 
-      let hasChild = false;//initialise présence sous-themes
-      if (theme.parent==this.themes[id].name){
-        //test sous-theme
-        this.themes.forEach(subTheme =>{
-          if ( subTheme.parent == theme.name ) hasChild=true;         
-        });//fin forEach
-        selectedTheme=theme;
-        selectedTheme.child=hasChild;
-        selectedThemes.push(selectedTheme);
-      } 
-		});//fin forEach
-    
-		return selectedThemes;		
+    public getThemeById(id:number): Theme|undefined { 
+      return this.themes.find( t => t.id == id );
+    } 
+    public getThemeByName(name:string): Theme|undefined { 
+      return this.themes.find( t => t.name == name );
+    } 
+    public idParent:number=0;
+	 
+    getThemes(id:number):Theme[] {
+      this.idParent=id;
+      let childrenThemes:Theme[]=[];
+      // renvoi les themes enfants avec l'id
+      let children=this.getThemeById(id)?.children;
+      children?.forEach(child => {
+        let childrenTheme=this.getThemeByName(child);
+        if (childrenTheme)childrenThemes.push(childrenTheme);        
+      });
+		  return childrenThemes;		
 	  };
 
     public deleteTheme(id: number): void {

@@ -27,7 +27,7 @@ const routes: Routes = [
   {   path: 'session/admin/insert', component: SessionAdminEditComponent },
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
-  
+  {   path: '', redirectTo: '/theme', pathMatch: 'full'},
  
 ];
 

@@ -10,7 +10,7 @@ import { ThemeService } from '../theme.service';
 export class ThemeComponent {	
   constructor(private service: ThemeService) { } 
    	selectedThemes:any[]=this.showThemes(0);//initialise affiche domaines
-	   themeParent=this.service.themeParent;
+	   idParent=this.service.idParent;
 	
 	showThemes(id:number) { 
 		this.selectedThemes=this.service.getThemes(id);

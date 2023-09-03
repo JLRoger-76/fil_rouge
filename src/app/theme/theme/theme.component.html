@@ -5,6 +5,9 @@
   </div>
 
   <div class="container">
+    <button class="btn btn-info mb-3" (click)="showThemes(idParent)">
+      Retour
+    </button>
     <div class="row">
       <div
         class="col-lg 3 col-md-4 col-sm-6 col-xs-12"
@@ -18,7 +21,7 @@
             <h5 class="card-title">{{ theme.name }}</h5>
           </div>
           <div
-            *ngIf="theme.child"
+            *ngIf="theme.children.length > 0"
             class="card-footer bg-transparent border-success"
           >
             <button class="btn btn-warning" (click)="showThemes(theme.id)">
@@ -26,7 +29,7 @@
             </button>
           </div>
           <div
-            *ngIf="!theme.child"
+            *ngIf="theme.children.length == 0 && theme.formations.length > 0"
             class="card-footer bg-transparent border-success"
           >
             <a
