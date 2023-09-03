@@ -1,1 +1,162 @@
-<p>instructor-admin-edit works!</p>
+<div id="backimage">
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Edition du formateur</h3>
+  </div>
+  <div class="container">
+    <form
+      class="card p-1 bg-light text-dark"
+      [formGroup]="instructorForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="mb-3">
+        <label>Id</label>
+        <input
+          type="number"
+          formControlName="id"
+          class="form-control"
+          id="id"
+          placeholder="ID"
+          readonly
+        />
+        <br />
+        <label>Prénom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          formControlName="firstName"
+        />
+        <div
+          *ngIf="f['firstName'].touched && f['firstName'].invalid"
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="f['firstName'].errors && f['firstName'].errors['required']"
+          >
+            prénom est requis.
+          </div>
+          <div
+            *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']"
+          >
+            prenom d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Id</label>
+        <input
+          type="number"
+          formControlName="id"
+          class="form-control"
+          id="id"
+          placeholder="ID"
+          readonly
+        />
+        <br />
+        <label>Prénom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          formControlName="firstName"
+        />
+        <div
+          *ngIf="f['firstName'].touched && f['firstName'].invalid"
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="f['firstName'].errors && f['firstName'].errors['required']"
+          >
+            prénom est requis.
+          </div>
+          <div
+            *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']"
+          >
+            prenom d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Nom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          formControlName="lastName"
+        />
+        <div
+          *ngIf="f['lastName'].touched && f['lastName'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">
+            Nom est requis.
+          </div>
+          <div
+            *ngIf="f['lastName'].errors && f['lastName'].errors['minlength']"
+          >
+            Nom d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Téléphone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          formControlName="phoneNumber"
+        />
+        <div
+          *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid"
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="
+              f['phoneNumber'].errors && f['phoneNumber'].errors['required']
+            "
+          >
+            téléphone est requis.
+          </div>
+          <div
+            *ngIf="
+              f['phoneNumber'].errors && f['phoneNumber'].errors['minlength']
+            "
+          >
+            téléphone d'au moins 8 chiffres.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Adresse</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          formControlName="address"
+        />
+        <div
+          *ngIf="f['address'].touched && f['address'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['address'].errors && f['address'].errors['required']">
+            adresse est requise.
+          </div>
+          <div *ngIf="f['address'].errors && f['address'].errors['minlength']">
+            adresse d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-info"
+          [disabled]="!instructorForm.valid"
+        >
+          Enregistrer
+        </button>
+        <button type="submit" class="btn btn-warning">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

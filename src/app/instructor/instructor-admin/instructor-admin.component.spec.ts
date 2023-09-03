@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InstructorAdminComponent } from './instructor-admin.component';
 
 describe('InstructorAdminComponent', () => {

@@ -1,4 +1,3 @@
-<p>instructor-admin works!</p>
 <div id="backimage">
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
@@ -15,7 +14,7 @@
             Action
             <a
               class="btn btn-info"
-              routerLink="/formation/admin/insert"
+              routerLink="/instructor/admin/insert"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Ajouter</a
@@ -29,7 +28,20 @@
           <td>{{ instructor.firstName }} {{ instructor.lastName }}</td>
           <td>{{ instructor.phoneNumber }}</td>
           <td>
-            <a class="btn btn-info" ariaCurrentWhenActive="page">Editer</a>
+            <a
+              class="btn btn-info"
+              routerLink="/instructor/admin/edit/{{ instructor.id }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Editer</a
+            >
+            <a
+              class="btn btn-info"
+              routerLink="/skill/admin/edit/{{ instructor.id }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Compétences</a
+            >
             <button class="btn btn-warning">Supprimer</button>
           </td>
         </tr>
@@ -37,3 +49,4 @@
     </table>
   </div>
 </div>
+<router-outlet></router-outlet>

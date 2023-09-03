@@ -7,6 +7,7 @@ import { FormationModule } from './formation/formation.module';
 import { ThemeAdminComponent } from './theme/theme-admin/theme-admin.component';
 import { InstructorModule } from './instructor/instructor.module';
 import { SkillModule } from './skill/skill.module';
+import { SessionModule } from './session/session.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SkillModule } from './skill/skill.module';
     AppRoutingModule,
     FormationModule,
     InstructorModule,
+    SessionModule,
     SkillModule,
     ThemeModule
   ],
