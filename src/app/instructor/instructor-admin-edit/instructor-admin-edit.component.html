@@ -44,40 +44,6 @@
         </div>
       </div>
       <div class="mb-3">
-        <label>Id</label>
-        <input
-          type="number"
-          formControlName="id"
-          class="form-control"
-          id="id"
-          placeholder="ID"
-          readonly
-        />
-        <br />
-        <label>Prénom</label>
-        <input
-          type="text"
-          class="form-control"
-          id="firstName"
-          formControlName="firstName"
-        />
-        <div
-          *ngIf="f['firstName'].touched && f['firstName'].invalid"
-          class="alert alert-danger"
-        >
-          <div
-            *ngIf="f['firstName'].errors && f['firstName'].errors['required']"
-          >
-            prénom est requis.
-          </div>
-          <div
-            *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']"
-          >
-            prenom d'au moins 3 caractères.
-          </div>
-        </div>
-      </div>
-      <div class="mb-3">
         <label>Nom</label>
         <input
           type="text"

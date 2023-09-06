@@ -17,7 +17,7 @@ export class FormationAdminEditComponent  implements OnInit{
     id:new FormControl(0),
     title: new FormControl('',[Validators.required,Validators.minLength(3)]),
     price: new FormControl(0,Validators.required),
-    themes:new FormControl([""],Validators.required),
+    theme:new FormControl([''],Validators.required),
     content: new FormControl('',[Validators.required,Validators.minLength(3)]),
   });
   
@@ -31,10 +31,11 @@ export class FormationAdminEditComponent  implements OnInit{
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     if (id){
+      
       this.training=this.service.getTrainingById(id)!;
       this.trainingForm.setValue(this.training)
     } 
-     this.selectedThemes=this.service.showThemes(); 
+     this.selectedThemes=this.service.getselectedThemesOfTraining(id); 
   }
 
   onSubmit() {

@@ -40,36 +40,35 @@
         </div>
       </div>
 
-      <div class="mb-3" *ngFor="let theme of selectedThemes">
-        <div class="form-check" *ngIf="theme.selected == 0">
+      <div class="mb-3" *ngFor="let sTheme of selectedThemes">
+        <div class="form-check" *ngIf="sTheme.selected == 0">
           <input
             class="form-check-input"
             type="checkbox"
-            value="{{ theme.id }}"
+            value="{{ sTheme.name }}"
             id="flexCheckDefault"
           />
           <label class="form-check-label" for="flexCheckDefault">
-            {{ theme.name }}
+            {{ sTheme.name }}
           </label>
         </div>
-        <div class="form-check" *ngIf="theme.selected != 0">
+        <div class="form-check" *ngIf="sTheme.selected != 0">
           <input
             class="form-check-input"
             type="checkbox"
-            value="{{ theme.id }}"
+            value="{{ sTheme.name }}"
             id="flexCheckChecked"
             checked
-            formControlName="id"
           />
           <label class="form-check-label" for="flexCheckChecked">
-            {{ theme.name }}
+            {{ sTheme.name }}
           </label>
         </div>
         <div
-          *ngIf="f['id'].touched && f['id'].invalid"
+          *ngIf="f['theme'].touched && f['theme'].invalid"
           class="alert alert-danger"
         >
-          <div *ngIf="f['id'].errors && f['id'].errors['required']">
+          <div *ngIf="f['theme'].errors && f['theme'].errors['required']">
             theme is required.
           </div>
         </div>

@@ -3,5 +3,5 @@ export interface Training {
     title:string;
     content:string;
     price:number;
-    themes:string[];
+    theme:string[];
 }
