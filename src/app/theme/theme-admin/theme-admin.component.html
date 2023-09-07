@@ -4,7 +4,7 @@
       <tr>
         <th>Id</th>
         <th>Nom</th>
-        <th>Id Parent</th>
+        <th>Parent</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -31,13 +31,16 @@
           </div>
         </td>
         <td>
-          <input
-            type="number"
-            class="form-control"
-            id="idParent"
-            formControlName="idParent"
-            min="1"
-          />
+          <select
+            class="form-select"
+            formControlName="parent"
+            placeholder="Choisir theme parent"
+          >
+            <option value="" disabled selected>Choisir le theme parent</option>
+            <option *ngFor="let theme of themes" [value]="theme.name">
+              {{ theme.name }}
+            </option>
+          </select>
         </td>
 
         <td>
@@ -53,12 +56,12 @@
       </tr>
 
       <tr *ngFor="let theme of themes">
-        <td>{{ theme.idTheme }}</td>
+        <td>{{ theme.id }}</td>
         <td>{{ theme.name }}</td>
-        <td>{{ theme.idParent }}</td>
+        <td>{{ theme.parent }}</td>
         <td>
           <button class="btn btn-info" (click)="onEdit(theme)">Editer</button>
-          <button class="btn btn-warning" (click)="onDelete(theme.idTheme)">
+          <button class="btn btn-warning" (click)="onDelete(theme.id)">
             Supprimer
           </button>
         </td>

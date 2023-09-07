@@ -1,20 +1,22 @@
 <div id="backimage">
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
-    <h3>Gestion des formations</h3>
+    <h3>Gestion des sessions</h3>
   </div>
   <div class="container">
     <table class="table table-bordered table-hover table-light">
       <thead>
         <tr>
           <th>Id</th>
-          <th>Nom</th>
-          <th>Prix</th>
+          <th>Formation</th>
+          <th>Formateur</th>
+          <th>Debut</th>
+          <th>Fin</th>
           <th>
             Action
             <a
               class="btn btn-info"
-              routerLink="/formation/admin/insert"
+              routerLink="/session/admin/insert"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Ajouter</a
@@ -22,22 +24,22 @@
           </th>
         </tr>
       </thead>
-      <tbody *ngFor="let training of trainings">
+      <tbody *ngFor="let session of sessions">
         <tr>
-          <td>{{ training.id }}</td>
-          <td>{{ training.title }}</td>
-          <td>{{ training.price }} €</td>
+          <td>{{ session.id }}</td>
+          <td>{{ session.formation }}</td>
+          <td>{{ session.instructor }}</td>
+          <td>{{ session.startDate }}</td>
+          <td>{{ session.endDate }}</td>
           <td>
             <a
               class="btn btn-info"
-              routerLink="/formation/admin/edit/{{ training.id }}"
+              routerLink="/session/admin/edit/{{ session.id }}"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Editer</a
             >
-            <button class="btn btn-warning" (click)="onDelete(training.id)">
-              Supprimer
-            </button>
+            <button class="btn btn-warning">Supprimer</button>
           </td>
         </tr>
       </tbody>
