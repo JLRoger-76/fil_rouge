@@ -29,7 +29,8 @@ export class InstructorAdminEditComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     if (id){
       this.instructor=this.service.getInstructorById(id)!;
-      this.instructorForm.setValue(this.instructor)
+      this.instructorForm.setValue(this.instructor);
+
     } 
   }
   onSubmit() {

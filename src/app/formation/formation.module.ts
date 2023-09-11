@@ -6,6 +6,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { FormationAdminComponent } from './formation-admin/formation-admin.component';
 import { FormationAdminEditComponent } from './formation-admin-edit/formation-admin-edit.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    NavbarModule,
     AppRoutingModule
   ],
   exports: [

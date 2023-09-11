@@ -4,6 +4,7 @@ import { InstructorAdminComponent } from './instructor-admin/instructor-admin.co
 import { InstructorAdminEditComponent } from './instructor-admin-edit/instructor-admin-edit.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
   declarations: [ 
@@ -14,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule, 
     ReactiveFormsModule,
+    NavbarModule,
     AppRoutingModule
   ],
 })

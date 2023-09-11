@@ -41,17 +41,24 @@ export class FormationService {
   public getAll(): Training[] {      
     return this.trainings;
   }
-  
+
   public getTrainingsOfTheme(id:number): Training[] {
-    let selectedTrainings:Training[] = [];// Themes avec idTheme=id 
-    this.trainings.forEach(training =>{ 
-       let theme=this.themes.find(t => t.id==id) ; 
-       if(theme && theme.id==id) selectedTrainings.push(training);     
-    });   
-    console.log(selectedTrainings)
+    let selectedTrainings:Training[] = [];
+    //nom du theme selectionné
+    let themename=this.themes.find(t=>t.id==id)?.name;
+    this.trainings.forEach(training=>{
+      //liste des themes de formation
+      let trainingthemes=training.theme;
+      trainingthemes.forEach(trainingtheme=>{
+        //recherche equivalent
+        if(trainingtheme==themename){
+          selectedTrainings.push(training);
+        }  
+      })
+    })   
     return selectedTrainings;
   }
-
+  
   public getTrainingById(id:number): Training|undefined { 
     return this.trainings.find( t => t.id == id );
   } 

@@ -1,40 +1,39 @@
-<p>skill-admin-edit works!</p>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Formation</th>
-      <th scope="col">Compétence</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-secondary">
-      <td></td>
-      <td><input id="Nom" /></td>
-      <td><input type="number" min="1" style="width: 70px" /></td>
-      <td>
-        <a href="#" class="btn btn-info">Enregistrer</a>
-        <a href="#" class="btn btn-warning">Annuler</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>GIT</td>
-      <td>5</td>
-      <td>
-        <button type="submit" class="btn btn-info">Editer</button>
-        <button type="submit" class="btn btn-warning">Supprimer</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>C#</td>
-      <td>4</td>
-      <td>
-        <button type="submit" class="btn btn-info">Editer</button>
-        <button type="submit" class="btn btn-warning">Supprimer</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div id="backimage">
+  <app-navbar></app-navbar>
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Gestion des expériences formateurs</h3>
+  </div>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Expérience (années)</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-secondary">
+          <td></td>
+          <td><input id="name" /></td>
+          <td><input id="exprérience" /></td>
+          <td>
+            <a href="#" class="btn btn-info">Enregistrer</a>
+            <a href="#" class="btn btn-warning">Annuler</a>
+          </td>
+        </tr>
+        <tr *ngFor="let skill of instructorSkills">
+          <th scope="row">{{ skill.id }}</th>
+          <td>{{ skill.name }}</td>
+          <td>{{ skill.experience }}</td>
+          <td>
+            <button type="submit" class="btn btn-info">Editer</button>
+            <button type="submit" class="btn btn-warning">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,71 +1,87 @@
-<form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
-  <table class="table table-bordered table-hover table-light">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Nom</th>
-        <th>Parent</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-secondary">
-        <td></td>
-        <td>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            formControlName="name"
-          />
-          <div
-            *ngIf="f['name'].touched && f['name'].invalid"
-            class="alert alert-danger"
-          >
-            <div *ngIf="f['name'].errors && f['name'].errors['required']">
-              Name is required.
-            </div>
-            <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
-              Name should be 3 character.
-            </div>
-          </div>
-        </td>
-        <td>
-          <select
-            class="form-select"
-            formControlName="parent"
-            placeholder="Choisir theme parent"
-          >
-            <option value="" disabled selected>Choisir le theme parent</option>
-            <option *ngFor="let theme of themes" [value]="theme.name">
-              {{ theme.name }}
-            </option>
-          </select>
-        </td>
+<div id="backimage">
+  <app-navbar></app-navbar>
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Gestion des themes</h3>
+  </div>
+  <div class="container">
+    <form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
+      <table class="table table-bordered table-hover table-light">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Parent</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-secondary">
+            <td></td>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="name"
+              />
+              <div
+                *ngIf="f['name'].touched && f['name'].invalid"
+                class="alert alert-danger"
+              >
+                <div *ngIf="f['name'].errors && f['name'].errors['required']">
+                  Name is required.
+                </div>
+                <div *ngIf="f['name'].errors && f['name'].errors['minlength']">
+                  Name should be 3 character.
+                </div>
+              </div>
+            </td>
+            <td>
+              <select
+                class="form-select"
+                formControlName="parent"
+                placeholder="Choisir theme parent"
+              >
+                <option value="" disabled selected>
+                  Choisir le theme parent
+                </option>
+                <option *ngFor="let theme of themes" [value]="theme.name">
+                  {{ theme.name }}
+                </option>
+              </select>
+            </td>
 
-        <td>
-          <button
-            type="submit"
-            class="btn btn-info"
-            [disabled]="!themeForm.valid"
-          >
-            Enregistrer
-          </button>
-          <button class="btn btn-warning" (click)="onClear()">Annuler</button>
-        </td>
-      </tr>
+            <td>
+              <button
+                type="submit"
+                class="btn btn-info"
+                [disabled]="!themeForm.valid"
+              >
+                Enregistrer
+              </button>
+              <button class="btn btn-warning" (click)="onClear()">
+                Annuler
+              </button>
+            </td>
+          </tr>
 
-      <tr *ngFor="let theme of themes">
-        <td>{{ theme.id }}</td>
-        <td>{{ theme.name }}</td>
-        <td>{{ theme.parent }}</td>
-        <td>
-          <button class="btn btn-info" (click)="onEdit(theme)">Editer</button>
-          <button class="btn btn-warning" (click)="onDelete(theme.id)">
-            Supprimer
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</form>
+          <tr *ngFor="let theme of themes">
+            <td>{{ theme.id }}</td>
+            <td>{{ theme.name }}</td>
+            <td>{{ theme.parent }}</td>
+            <td>
+              <button class="btn btn-info" (click)="onEdit(theme)">
+                Editer
+              </button>
+              <button class="btn btn-warning" (click)="onDelete(theme.id)">
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
