@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Session } from './session';
 import { Training } from '../formation/formation';
 import { Theme } from '../theme/theme';
+import { Instructor } from '../instructor/instructor';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,13 @@ export class SessionService implements OnInit{
       {id : 6, name :"Systèmes d'exploitation",parent:"Informatique",children:[],formations:[]},
       {id : 7, name :"Gestion de Projets",parent:"Informatique",children:[],formations:[]},
      ] 
+
+     public instructors: Instructor[] = [
+      {id : 0,firstName:"John",lastName:"Doe",phoneNumber:"0642151254",
+      address:"Lille",skill:[{id:1,name:"GIT",experience:5}],session:"" },
+      {id : 1,firstName:"Alice",lastName:"Game",phoneNumber:"0642151254",
+      address:"Lille",skill:[{id:1,name:"GIT",experience:4},{id:2,name:"C#",experience:3}],session:"" },
+    ]
 
      
   ngOnInit(): void {
