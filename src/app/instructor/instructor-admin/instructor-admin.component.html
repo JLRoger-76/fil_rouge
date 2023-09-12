@@ -1,4 +1,5 @@
 <div id="backimage">
+  <app-navbar></app-navbar>
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
     <h3>Gestion des formateurs</h3>
@@ -29,20 +30,20 @@
           <td>{{ instructor.phoneNumber }}</td>
           <td>
             <a
-              class="btn btn-info"
+              class="btn btn-info ms-3"
               routerLink="/instructor/admin/edit/{{ instructor.id }}"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Editer</a
             >
             <a
-              class="btn btn-info"
+              class="btn btn-info ms-3"
               routerLink="/skill/admin/edit/{{ instructor.id }}"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Compétences</a
             >
-            <button class="btn btn-warning">Supprimer</button>
+            <button class="btn btn-warning ms-3">Supprimer</button>
           </td>
         </tr>
       </tbody>

@@ -1,7 +1,8 @@
 <div id="backimage">
+  <app-navbar></app-navbar>
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
-    <h3>Edition du formateur</h3>
+    <h3>Edition de la Session</h3>
   </div>
   <div class="container">
     <form
@@ -20,13 +21,32 @@
           readonly
         />
         <br />
-        <label>Formation</label>
-        <input
-          type="text"
-          class="form-control"
-          id="formation"
-          formControlName="formation"
-        />
+
+        <label>Theme => Formation</label>
+        <div>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            (change)="selectOption($any($event.target).value)"
+          >
+            <option selected>Choisir un theme</option>
+            <option [value]="theme.id" *ngFor="let theme of themes">
+              {{ theme.name }}
+            </option>
+          </select>
+          <select
+            formControlName="formation"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option
+              *ngFor="let training of trainings"
+              [ngValue]="training.title"
+            >
+              {{ training.title }}
+            </option>
+          </select>
+        </div>
         <div
           *ngIf="f['formation'].touched && f['formation'].invalid"
           class="alert alert-danger"
@@ -45,12 +65,19 @@
       </div>
       <div class="mb-3">
         <label>Formateur</label>
-        <input
-          type="text"
-          class="form-control"
-          id="instructor"
+        <select
+          class="form-select"
+          aria-label="Default select example"
           formControlName="instructor"
-        />
+        >
+          <option selected>Choisir un formateur</option>
+          <option
+            [value]="instructor.id"
+            *ngFor="let instructor of instructors"
+          >
+            {{ instructor.firstName }} {{ instructor.lastName }}
+          </option>
+        </select>
         <div
           *ngIf="f['instructor'].touched && f['instructor'].invalid"
           class="alert alert-danger"

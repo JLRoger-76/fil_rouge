@@ -1,5 +1,5 @@
-<div id="backimage">
-  <div id="jumbotron">
+<div id="backimageclient">
+  <div id="jumbotronclient">
     <h1 class="mb-3 h2">IT Training</h1>
     <h3>Découvrez nos formations</h3>
   </div>
@@ -20,19 +20,17 @@
           <div class="card-body">
             <h5 class="card-title">{{ theme.name }}</h5>
           </div>
-          <div
-            *ngIf="theme.children.length > 0"
-            class="card-footer bg-transparent border-success"
-          >
-            <button class="btn btn-warning" (click)="showThemes(theme.id)">
+          <div class="card-footer bg-transparent border-success">
+            <button
+              *ngIf="theme.children.length > 0"
+              class="btn btn-warning"
+              (click)="showThemes(theme.id)"
+            >
               Voir les thèmes
             </button>
-          </div>
-          <div
-            *ngIf="theme.children.length == 0 && theme.formations.length > 0"
-            class="card-footer bg-transparent border-success"
-          >
+
             <a
+              *ngIf="theme.formations.length > 0"
               class="btn btn-info"
               routerLink="/formation/{{ theme.id }}"
               routerLinkActive="active"

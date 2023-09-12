@@ -13,8 +13,9 @@ export class ThemeService {
     {id : 2, name :"Informatique",parent:"Domaine",children:["Réseaux","Langages de développement","Systèmes d'exploitation","Gestion de Projets"],formations:[]},
     {id : 3, name :"Management",parent:"Domaine",children:[],formations:[]},
     {id : 4, name :"Réseaux",parent:"Informatique",children:[],formations:[]},
-    {id : 5, name :"Langages de développement",parent:"Informatique",children:[],formations:["JAVA","C#","C++"]},
-     ]
+    {id : 5, name :"Langages de développement",parent:"Informatique",children:["Langages du WEB"],formations:["JAVA","C#","C++"]},
+    {id : 6, name :"Langages du WEB",parent:"Langages de développement",children:[],formations:["PHP","Javascript","Ajax"]},
+  ]
 	  
     getAll(){
       return this.themes;

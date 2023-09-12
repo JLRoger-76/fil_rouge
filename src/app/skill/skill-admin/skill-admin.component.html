@@ -1,1 +1,46 @@
 <p>skill-admin works!</p>
+<div id="backimage">
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Gestion des compétences</h3>
+  </div>
+  <div class="container">
+    <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+      <table class="table table-bordered table-hover table-light">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Expérience</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-secondary">
+            <td></td>
+            <td><input id="name" formControlName="name" /></td>
+            <td><input id="experience" formControlName="experience" /></td>
+            <td>
+              <a href="#" class="btn btn-info">Enregistrer</a>
+              <a href="#" class="btn btn-warning">Annuler</a>
+            </td>
+          </tr>
+          <tr *ngFor="let skill of skills">
+            <td>{{ skill.id }}</td>
+            <td>{{ skill.name }}</td>
+            <td>{{ skill.experience }}</td>
+            <td>
+              <button class="btn btn-info" (click)="onEdit(skill)">
+                Editer
+              </button>
+              <button class="btn btn-warning" (click)="onDelete(skill.id)">
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

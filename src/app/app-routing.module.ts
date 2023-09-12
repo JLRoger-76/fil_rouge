@@ -11,6 +11,7 @@ import { InstructorAdminEditComponent } from './instructor/instructor-admin-edit
 import { SkillAdminEditComponent } from './skill/skill-admin-edit/skill-admin-edit.component';
 import { SessionAdminComponent } from './session/session-admin/session-admin.component';
 import { SessionAdminEditComponent } from './session/session-admin-edit/session-admin-edit.component';
+import { SkillAdminComponent } from './skill/skill-admin/skill-admin.component';
 
 const routes: Routes = [
   {   path: 'theme', component: ThemeComponent },

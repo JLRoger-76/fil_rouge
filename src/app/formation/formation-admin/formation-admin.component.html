@@ -1,4 +1,5 @@
 <div id="backimage">
+  <app-navbar></app-navbar>
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
     <h3>Gestion des formations</h3>
@@ -35,7 +36,10 @@
               ariaCurrentWhenActive="page"
               >Editer</a
             >
-            <button class="btn btn-warning" (click)="onDelete(training.id)">
+            <button
+              class="btn btn-warning ms-3"
+              (click)="onDelete(training.id)"
+            >
               Supprimer
             </button>
           </td>

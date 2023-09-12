@@ -4,6 +4,7 @@ import { SessionAdminComponent } from './session-admin/session-admin.component';
 import { SessionAdminEditComponent } from './session-admin-edit/session-admin-edit.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    NavbarModule,
     AppRoutingModule
   ]
 })
