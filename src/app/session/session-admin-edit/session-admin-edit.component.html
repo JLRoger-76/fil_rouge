@@ -1,0 +1,177 @@
+<div id="backimage">
+  <app-navbar></app-navbar>
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Edition de la Session</h3>
+  </div>
+  <div class="container">
+    <form
+      class="card p-1 bg-light text-dark"
+      [formGroup]="sessionForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="mb-3">
+        <label>Id</label>
+        <input
+          type="number"
+          formControlName="id"
+          class="form-control"
+          id="id"
+          placeholder="ID"
+          readonly
+        />
+        <br />
+
+        <label>Theme => Formation</label>
+        <div>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            (change)="selectFormation($any($event.target).value)"
+          >
+            <option selected>Choisir un theme</option>
+            <option [value]="theme.id" *ngFor="let theme of themes">
+              {{ theme.name }}
+            </option>
+          </select>
+          <select
+            formControlName="formation"
+            class="form-select"
+            aria-label="Default select example"
+            (change)="selectInstructor($any($event.target).value)"
+          >
+            <option
+              *ngFor="let training of trainings"
+              [ngValue]="training.title"
+            >
+              {{ training.title }}
+            </option>
+          </select>
+        </div>
+        <div
+          *ngIf="f['formation'].touched && f['formation'].invalid"
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="f['formation'].errors && f['formation'].errors['required']"
+          >
+            formation est requis.
+          </div>
+          <div
+            *ngIf="f['formation'].errors && f['formation'].errors['minlength']"
+          >
+            formation d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Formateur</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="instructor"
+        >
+          <option selected>Choisir un formateur</option>
+          <option
+            [value]="instructor.id"
+            *ngFor="let instructor of instructors"
+          >
+            {{ instructor.firstName }} {{ instructor.lastName }}
+          </option>
+        </select>
+        <div
+          *ngIf="f['instructor'].touched && f['instructor'].invalid"
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="f['instructor'].errors && f['instructor'].errors['required']"
+          >
+            formateur est requis.
+          </div>
+          <div
+            *ngIf="
+              f['instructor'].errors && f['instructor'].errors['minlength']
+            "
+          >
+            formateur d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Début</label>
+        <input
+          type="text"
+          class="form-control"
+          id="startDate"
+          formControlName="startDate"
+        />
+        <div
+          *ngIf="f['startDate'].touched && f['startDate'].invalid"
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="f['startDate'].errors && f['startDate'].errors['required']"
+          >
+            debut est requis.
+          </div>
+          <div
+            *ngIf="f['startDate'].errors && f['startDate'].errors['minlength']"
+          >
+            debut d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Fin</label>
+        <input
+          type="text"
+          class="form-control"
+          id="endDate"
+          formControlName="endDate"
+        />
+        <div
+          *ngIf="f['endDate'].touched && f['endDate'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['endDate'].errors && f['endDate'].errors['required']">
+            fin est requis.
+          </div>
+          <div *ngIf="f['endDate'].errors && f['endDate'].errors['minlength']">
+            fin d'au moins 3 caracteres.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Adresse</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          formControlName="address"
+        />
+        <div
+          *ngIf="f['address'].touched && f['address'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['address'].errors && f['address'].errors['required']">
+            adresse est requise.
+          </div>
+          <div *ngIf="f['address'].errors && f['address'].errors['minlength']">
+            adresse d'au moins 3 caractères.
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-info"
+          [disabled]="!sessionForm.valid"
+        >
+          Enregistrer
+        </button>
+        <button type="submit" class="btn btn-warning">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
+<p>session-admin-edit works!</p>

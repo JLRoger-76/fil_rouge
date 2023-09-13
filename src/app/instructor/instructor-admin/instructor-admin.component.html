@@ -1,0 +1,53 @@
+<div id="backimage">
+  <app-navbar></app-navbar>
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Gestion des formateurs</h3>
+  </div>
+  <div class="container">
+    <table class="table table-bordered table-hover table-light">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Telephone</th>
+          <th>
+            Action
+            <a
+              class="btn btn-info"
+              routerLink="/instructor/admin/insert"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Ajouter</a
+            >
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let instructor of instructors">
+        <tr>
+          <td>{{ instructor.id }}</td>
+          <td>{{ instructor.firstName }} {{ instructor.lastName }}</td>
+          <td>{{ instructor.phoneNumber }}</td>
+          <td>
+            <a
+              class="btn btn-info ms-3"
+              routerLink="/instructor/admin/edit/{{ instructor.id }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Editer</a
+            >
+            <a
+              class="btn btn-info ms-3"
+              routerLink="/skill/admin/edit/{{ instructor.id }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Compétences</a
+            >
+            <button class="btn btn-warning ms-3">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

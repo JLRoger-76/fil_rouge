@@ -11,8 +11,7 @@ import { FormationService } from '../formation.service';
 export class FormationDetailComponent implements OnInit{
   constructor(private service: FormationService,private route: ActivatedRoute) { } 
   training:Training=<Training>{};
-  imagePath: string="./assets/img/istockphoto-597963388-612x612.jpg"
-  imagePath2: string="./assets/img/istockphoto-1303821441-612x612.jpg"
+  
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.training=this.service.getTrainingById(id)!;

@@ -1,4 +1,5 @@
 <div id="backimage">
+  <app-navbar></app-navbar>
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
     <h3>Gestion des formations</h3>
@@ -24,20 +25,20 @@
       </thead>
       <tbody *ngFor="let training of trainings">
         <tr>
-          <td>{{ training.idTraining }}</td>
-          <td>{{ training.name }}</td>
+          <td>{{ training.id }}</td>
+          <td>{{ training.title }}</td>
           <td>{{ training.price }} €</td>
           <td>
             <a
               class="btn btn-info"
-              routerLink="/formation/admin/edit/{{ training.idTraining }}"
+              routerLink="/formation/admin/edit/{{ training.id }}"
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Editer</a
             >
             <button
-              class="btn btn-warning"
-              (click)="onDelete(training.idTraining)"
+              class="btn btn-warning ms-3"
+              (click)="onDelete(training.id)"
             >
               Supprimer
             </button>

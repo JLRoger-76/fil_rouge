@@ -1,0 +1,90 @@
+<div id="backimage">
+  <app-navbar></app-navbar>
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Gestion des expériences formateurs</h3>
+  </div>
+  <div class="container">
+    <form
+      class="card p-1 bg-light text-dark"
+      [formGroup]="skillForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Expérience(1 à 5)</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-secondary">
+            <td>
+              <input
+                type="number"
+                formControlName="id"
+                class="form-control"
+                id="id"
+                placeholder="ID"
+                readonly
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="name"
+              />
+              <input
+                id="idInstructor"
+                hidden
+                class="form-control"
+                formControlName="idInstructor"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                id="experience"
+                formControlName="experience"
+              />
+              <input
+                id="idTraining"
+                hidden
+                class="form-control"
+                formControlName="idInstructor"
+              />
+            </td>
+            <td>
+              <button
+                type="submit"
+                class="btn btn-info"
+                [disabled]="!skillForm.valid"
+              >
+                Enregistrer
+              </button>
+              <button class="btn btn-warning ms-1" (click)="onClear()">
+                Annuler
+              </button>
+            </td>
+          </tr>
+          <tr *ngFor="let skill of selectedSkills">
+            <th scope="row">{{ skill.id }}</th>
+            <td>{{ skill.name }}</td>
+            <td>{{ skill.experience }}</td>
+            <td>
+              <button class="btn btn-info" (click)="onEdit(skill)">
+                Editer
+              </button>
+              <button class="btn btn-warning ms-3">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
