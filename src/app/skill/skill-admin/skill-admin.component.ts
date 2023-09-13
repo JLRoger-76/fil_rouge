@@ -27,7 +27,7 @@ export class SkillAdminComponent implements OnInit {
   }
 
   onEdit(skill:Skill){
-    this.skillForm.setValue(skill)
+   //this.skillForm.setValue(skill)
   }
   onDelete(id:number){
     //this.service.deleteTheme(id);

@@ -22,7 +22,7 @@ export class ThemeAdminComponent implements OnInit {
   });
 
   themes: Theme[] = this.service.getAll();
-  editTheme:Theme=<Theme>{};
+
   ngOnInit(): void {
      this.themes = this.service.getAll();
   }
@@ -33,7 +33,7 @@ export class ThemeAdminComponent implements OnInit {
     this.themeForm.setValue(theme)
   }
   onClear(){
-    this.editTheme=<Theme>{};
+    this.themeForm.reset();
   }
   onDelete(id:number){
      this.service.deleteTheme(id);

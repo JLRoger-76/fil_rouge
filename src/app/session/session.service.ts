@@ -32,10 +32,12 @@ export class SessionService implements OnInit{
 
      public instructors: Instructor[] = [
       {id : 0,firstName:"John",lastName:"Doe",phoneNumber:"0642151254",
-      address:"Lille",skill:[{id:1,name:"GIT",experience:5}],session:"" },
+      address:"Lille",skill:[{id:0,idInstructor : 0,experience:5,idTraining:0},],session:"" },
       {id : 1,firstName:"Alice",lastName:"Game",phoneNumber:"0642151254",
-      address:"Lille",skill:[{id:1,name:"GIT",experience:4},{id:2,name:"C#",experience:3}],session:"" },
+      address:"Lille",skill:[{id:1,idInstructor : 1,experience:2,idTraining:1},
+        {id:2,idInstructor : 1,experience:5,idTraining:2},],session:"" },
     ]
+  
 
      
   ngOnInit(): void {

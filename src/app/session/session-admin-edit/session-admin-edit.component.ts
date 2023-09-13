@@ -43,15 +43,18 @@ export class SessionAdminEditComponent implements OnInit{
       this.session=this.service.getSessionById(id)!;
       this.sessionForm.setValue(this.session);
       this.trainings=[];
-      this.instructors=this.instrucorservice.getAll();
     } 
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.sessionForm.value);
   }
-  selectOption(id: number) {
+  selectFormation(id: number) {
     this.trainings=this.formationservice.getTrainingsOfTheme(id);
-//console.log(this.trainings)
+  }
+
+  selectInstructor(id: number){
+    this.instructors=this.instrucorservice.getByFormationId(id);
+    console.log(id);
   }
 }
