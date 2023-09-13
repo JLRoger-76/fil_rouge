@@ -1,82 +1,87 @@
-<div class="container">
-  <h2>Inscription</h2>
-  <form
-    class="card p-3 bg-light text-dark"
-    [formGroup]="FormA"
-    (ngSubmit)="onSubmit()"
-  >
-    <div class="mb-3">
-      <label for="firstName" class="form-label">Prénom</label>
-      <input
-        type="text"
-        class="form-control"
-        id="firstName"
-        placeholder="Prénom"
-        formControlName="firstName"
-        aria-label="Prénom"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="lastName" class="form-label">Nom de famille</label>
-      <input
-        type="text"
-        class="form-control"
-        id="lastName"
-        placeholder="Nom de famille"
-        formControlName="lastName"
-        aria-label="Nom de famille"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="Email"
-        formControlName="email"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="password" class="form-label">Mot de passe</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        placeholder="Mot de passe"
-        formControlName="password"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="address" class="form-label">Adresse</label>
-      <input
-        type="text"
-        class="form-control"
-        id="address"
-        placeholder="Appartement, rue"
-        formControlName="address"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="postalCode" class="form-label">Code Postal</label>
-      <input
-        type="text"
-        class="form-control"
-        id="postalCode"
-        formControlName="postalCode"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="city" class="form-label">Ville</label>
-      <input
-        type="text"
-        class="form-control"
-        id="city"
-        formControlName="city"
-      />
-    </div>
-    <div class="mb-3">
-      <button type="submit" class="btn btn-primary">S'inscrire</button>
-    </div>
-  </form>
+<div id="backimageclient">
+  <div id="jumbotronclient">
+    <h1 class="mb-3 h2">IT Training</h1>
+  </div>
+  <div class="container">
+    <h2>Inscription</h2>
+    <form
+      class="card p-3 bg-light text-dark"
+      [formGroup]="FormA"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="mb-3">
+        <label for="firstName" class="form-label">Prénom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          placeholder="Prénom"
+          formControlName="firstName"
+          aria-label="Prénom"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Nom de famille</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          placeholder="Nom de famille"
+          formControlName="lastName"
+          aria-label="Nom de famille"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Mot de passe"
+          formControlName="password"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Adresse</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          placeholder="Appartement, rue"
+          formControlName="address"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="postalCode" class="form-label">Code Postal</label>
+        <input
+          type="text"
+          class="form-control"
+          id="postalCode"
+          formControlName="postalCode"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="city" class="form-label">Ville</label>
+        <input
+          type="text"
+          class="form-control"
+          id="city"
+          formControlName="city"
+        />
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+      </div>
+    </form>
+  </div>
 </div>
