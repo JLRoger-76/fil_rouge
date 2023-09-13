@@ -1,0 +1,181 @@
+<style>
+  .narrow-cell {
+    width: 90px; /* Ajustez la largeur selon vos préférences */
+  }
+</style>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h1 class="text-center">Evaluation de formation</h1>
+
+      <form [formGroup]="FormD" (ngSubmit)="onSubmit()">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th class="narrow-cell">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Réception :</td>
+              <td>
+                <input
+                  type="number"
+                  id="receptionScore"
+                  name="receptionScore"
+                  min="1"
+                  max="5"
+                  formControlName="receptionScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Environnement :</td>
+              <td>
+                <input
+                  type="number"
+                  id="environmentScore"
+                  name="environmentScore"
+                  min="1"
+                  max="5"
+                  formControlName="environmentScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Contenu :</td>
+              <td>
+                <input
+                  type="number"
+                  id="contentScore"
+                  name="contentScore"
+                  min="1"
+                  max="5"
+                  formControlName="contentScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Pédagogie :</td>
+              <td>
+                <input
+                  type="number"
+                  id="pedagogyScore"
+                  name="pedagogyScore"
+                  min="1"
+                  max="5"
+                  formControlName="pedagogyScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Compétences :</td>
+              <td>
+                <input
+                  type="number"
+                  id="skillScore"
+                  name="skillScore"
+                  min="1"
+                  max="5"
+                  formControlName="skillScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Disponibilité :</td>
+              <td>
+                <input
+                  type="number"
+                  id="upTimeScore"
+                  name="upTimeScore"
+                  min="1"
+                  max="5"
+                  formControlName="upTimeScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Réponses :</td>
+              <td>
+                <input
+                  type="number"
+                  id="answerScore"
+                  name="answerScore"
+                  min="1"
+                  max="5"
+                  formControlName="answerScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Facilitation :</td>
+              <td>
+                <input
+                  type="number"
+                  id="facilitationScore"
+                  name="facilitationScore"
+                  min="1"
+                  max="5"
+                  formControlName="facilitationScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Satisfaction :</td>
+              <td>
+                <input
+                  type="number"
+                  id="Satisfaction"
+                  name="Satisfaction"
+                  min="1"
+                  max="5"
+                  formControlName="Satisfaction"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Recommandation :</td>
+              <td>
+                <input
+                  type="number"
+                  id="recommendationScore"
+                  name="recommendationScore"
+                  min="1"
+                  max="5"
+                  formControlName="recommendationScore"
+                  class="form-control"
+                />
+              </td>
+            </tr>
+
+            <!-- Ajoutez des lignes pour d'autres critères ici -->
+          </tbody>
+        </table>
+
+        <div class="form-group">
+          <label for="trainigproject">Projet de formation :</label>
+          <input
+            type="text"
+            id="trainigproject"
+            name="trainigproject"
+            formControlName="trainigproject"
+            class="form-control"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
