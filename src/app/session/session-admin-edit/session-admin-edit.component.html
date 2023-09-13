@@ -27,7 +27,7 @@
           <select
             class="form-select"
             aria-label="Default select example"
-            (change)="selectOption($any($event.target).value)"
+            (change)="selectFormation($any($event.target).value)"
           >
             <option selected>Choisir un theme</option>
             <option [value]="theme.id" *ngFor="let theme of themes">
@@ -38,6 +38,7 @@
             formControlName="formation"
             class="form-select"
             aria-label="Default select example"
+            (change)="selectInstructor($any($event.target).value)"
           >
             <option
               *ngFor="let training of trainings"

@@ -1,4 +1,6 @@
 export interface Skill {
     id:number;
-    name:string;
-    experience:number;}
+    idInstructor:number;
+    experience:number;
+    idTraining:number
+   }

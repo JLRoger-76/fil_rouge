@@ -7,13 +7,13 @@
     min-height: 100vh;
 }
 #jumbotron{
-    background-image: url('/assets/img/istockphoto-597963388-612x612.jpg');
+    background-image: url('/assets/img/image1.jpg');
     background-size: cover;
     padding: 5px;
     text-align: center;
 }
 #backimageclient{
-    background-image: url('/assets/img/istockphoto-597963388-612x612.jpg');
+    background-image: url('/assets/img/image1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
