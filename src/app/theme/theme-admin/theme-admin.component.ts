@@ -1,12 +1,12 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../theme.service';
 import { Theme } from '../theme';
-import { FormGroup, FormControl,Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-theme-admin',
   templateUrl: './theme-admin.component.html',
-  styleUrls: ['./theme-admin.component.css']
+  styleUrls: ['./theme-admin.component.css'],
 })
 
 

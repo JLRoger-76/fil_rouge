@@ -12,9 +12,18 @@ import { SkillAdminEditComponent } from './skill/skill-admin-edit/skill-admin-ed
 import { SessionAdminComponent } from './session/session-admin/session-admin.component';
 import { SessionAdminEditComponent } from './session/session-admin-edit/session-admin-edit.component';
 import { SkillAdminComponent } from './skill/skill-admin/skill-admin.component';
+import { RegistrationFormComponent } from './registration/registration-form/registration-form.component';
+import { InscriptionFormComponent } from './registration/inscription-form/inscription-form.component';
+import { PresenceComponent } from './registration/presence/presence.component';
+import { EvaluationFormComponent } from './evaluation-form/evaluation-form/evaluation-form.component';
 
 const routes: Routes = [
-  {   path: 'theme', component: ThemeComponent },
+
+
+  
+  { path: 'registration', component: RegistrationFormComponent },
+  { path: 'IT-presence', component: PresenceComponent },
+   {   path: 'theme', component: ThemeComponent },
   {   path: 'theme/admin', component: ThemeAdminComponent},
   {   path: 'formation/admin', component: FormationAdminComponent},
   {   path: 'instructor/admin', component: InstructorAdminComponent},
@@ -29,11 +38,16 @@ const routes: Routes = [
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
   {   path: '', redirectTo: '/theme', pathMatch: 'full'},
- 
-];
+
+  {
+    path: 'registration/inscription-form',
+    component: InscriptionFormComponent,
+  },
+  { path: 'evaluation-form', component: EvaluationFormComponent },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
