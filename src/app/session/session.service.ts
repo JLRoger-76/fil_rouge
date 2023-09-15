@@ -12,6 +12,7 @@ export class SessionService implements OnInit{
   constructor() { }
   public sessions: Session[] = [
     {id : 0,formation:"Java débutant",instructor:"Doe",startDate:"01/01/2024",endDate:"05/01/2024",address:"Lille"},
+    {id : 1,formation:"Java avancé",instructor:"Game",startDate:"01/02/2024",endDate:"05/02/2024",address:"Lille"},
   ]
 
   public trainings: Training[] = [
