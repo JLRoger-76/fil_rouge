@@ -41,14 +41,20 @@
         />
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
+        <label for="username" class="form-label">Email</label>
         <input
           type="email"
           class="form-control"
-          id="email"
-          placeholder="email"
-          formControlName="email"
+          id="username"
+          placeholder="username"
+          formControlName="username"
         />
+      </div>
+      <div
+        *ngIf="f['username'].touched && f['username'].invalid"
+        class="alert alert-danger"
+      >
+        Veuillez fournir une adresse électronique valide
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Mot de passe</label>
@@ -89,7 +95,9 @@
         />
       </div>
       <div class="mb-3">
-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!FormA.valid">
+          S'inscrire
+        </button>
       </div>
     </form>
   </div>
