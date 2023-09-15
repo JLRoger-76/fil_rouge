@@ -24,20 +24,28 @@ export class RegistrationService {
   // }
 
   register(user: any): Observable<any> {
+    this.getAll().subscribe(
+      (data) => console.table(data),
+      (err) => console.log(err)
+    );
     // const params = { email: email };
     return this.http.post(
       'http://localhost:8080/api/users/register',
       {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        username: user.username,
-        password: user.password,
-        address: user.address,
-        postalCode: user.postalCode,
-        city: user.city,
-        phoneNumber: user.phoneNumber,
+        idUser: 0,
+        username: 'lili4@gmail.com',
+        password: 'lili1234',
+        firstName: 'lili',
+        lastName: 'joe',
+        city: 'rouen',
+        postalCode: '76000',
+        address: 'rue albert dupuis',
+        phoneNumber: '0755998866',
       },
       httpOptions
     );
+  }
+  getAll() {
+    return this.http.get('http://localhost:8080/api/users/all', httpOptions);
   }
 }
