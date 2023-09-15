@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { Evaluation } from './evaluation';
-=======
->>>>>>> 80439bdb10f8e035c73e5de0cbe38002024203e5
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +8,6 @@ export class EvaluationFormService {
   private evaluationData: any[] = [];
 
   constructor() {}
-<<<<<<< HEAD
   public evaluations: Evaluation[] = [
     {id:1,
       receptionScore:1,
@@ -37,8 +33,6 @@ export class EvaluationFormService {
       })         
     return selectedEvaluations;
   } 
-=======
->>>>>>> 80439bdb10f8e035c73e5de0cbe38002024203e5
 
   addEvaluationData(data: any) {
     this.evaluationData.push(data);

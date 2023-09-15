@@ -37,5 +37,6 @@ import { InstructorModule } from './instructor/instructor.module';
         RouterModule,
         PresenceModule,
         NavbarModule
+]
 })
 export class AppModule {}
