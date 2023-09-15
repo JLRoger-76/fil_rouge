@@ -18,33 +18,35 @@ import { PresenceComponent } from './registration/presence/presence.component';
 import { EvaluationFormComponent } from './evaluation-form/evaluation-form/evaluation-form.component';
 
 const routes: Routes = [
-
-
-  
-  { path: 'registration', component: RegistrationFormComponent },
+  { path: 'registration/:id', component: RegistrationFormComponent },
   { path: 'IT-presence', component: PresenceComponent },
-   {   path: 'theme', component: ThemeComponent },
-  {   path: 'theme/admin', component: ThemeAdminComponent},
-  {   path: 'formation/admin', component: FormationAdminComponent},
-  {   path: 'instructor/admin', component: InstructorAdminComponent},
-  {   path: 'session/admin', component: SessionAdminComponent},
-  {   path: 'session/admin/edit/:id', component: SessionAdminEditComponent},
-  {   path: 'instructor/admin/edit/:id', component: InstructorAdminEditComponent},
-  {   path: 'skill/admin/edit/:id', component: SkillAdminEditComponent},
-  {   path: 'formation/admin/edit/:id', component: FormationAdminEditComponent },
-  {   path: 'formation/admin/insert', component: FormationAdminEditComponent },
-  {   path: 'instructor/admin/insert', component: InstructorAdminEditComponent },
-  {   path: 'session/admin/insert', component: SessionAdminEditComponent },
-  {   path: 'formation/:id', component: FormationListComponent },
-  {   path: 'formation/detail/:id', component: FormationDetailComponent },
-  {   path: '', redirectTo: '/theme', pathMatch: 'full'},
+  { path: 'theme', component: ThemeComponent },
+  { path: 'theme/admin', component: ThemeAdminComponent },
+  { path: 'formation/admin', component: FormationAdminComponent },
+  { path: 'instructor/admin', component: InstructorAdminComponent },
+  { path: 'session/admin', component: SessionAdminComponent },
+  { path: 'session/admin/edit/:id', component: SessionAdminEditComponent },
 
   {
-    path: 'registration/inscription-form',
+    path: 'instructor/admin/edit/:id',
+    component: InstructorAdminEditComponent,
+  },
+
+  { path: 'skill/admin/edit/:id', component: SkillAdminEditComponent },
+  { path: 'formation/admin/edit/:id', component: FormationAdminEditComponent },
+  { path: 'formation/admin/insert', component: FormationAdminEditComponent },
+  { path: 'instructor/admin/insert', component: InstructorAdminEditComponent },
+  { path: 'session/admin/insert', component: SessionAdminEditComponent },
+  { path: 'formation/:id', component: FormationListComponent },
+  { path: 'formation/detail/:id', component: FormationDetailComponent },
+  { path: '', redirectTo: '/theme', pathMatch: 'full' },
+
+  {
+    path: 'registration/:id/inscription-form',
     component: InscriptionFormComponent,
   },
   { path: 'evaluation-form', component: EvaluationFormComponent },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
