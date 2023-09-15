@@ -16,6 +16,7 @@ import { RegistrationFormComponent } from './registration/registration-form/regi
 import { InscriptionFormComponent } from './registration/inscription-form/inscription-form.component';
 import { PresenceComponent } from './registration/presence/presence.component';
 import { EvaluationFormComponent } from './evaluation-form/evaluation-form/evaluation-form.component';
+import { EvaluationAdminSessionComponent } from './evaluation-form/evaluation-admin-session/evaluation-admin-session.component';
 
 const routes: Routes = [
 
@@ -37,6 +38,7 @@ const routes: Routes = [
   {   path: 'session/admin/insert', component: SessionAdminEditComponent },
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
+  {   path: 'evaluation/admin/session/:id', component: EvaluationAdminSessionComponent },
   {   path: '', redirectTo: '/theme', pathMatch: 'full'},
 
   {

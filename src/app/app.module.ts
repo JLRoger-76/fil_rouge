@@ -16,11 +16,13 @@ import { RouterModule } from '@angular/router';
 import { PresenceModule } from './registration/presence/presence/presence.module';
 import { EvaluationFormModule } from './evaluation-form/evaluation-form.module';
 import { InstructorModule } from './instructor/instructor.module';
+import { EvaluationAdminSessionComponent } from './evaluation-form/evaluation-admin-session/evaluation-admin-session.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ThemeAdminComponent,
+        EvaluationAdminSessionComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
