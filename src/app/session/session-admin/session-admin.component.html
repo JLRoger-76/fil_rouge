@@ -4,54 +4,47 @@
     <h1 class="mb-3 h2">IT Training</h1>
     <h3>Gestion des sessions</h3>
   </div>
-
-  <table class="table table-bordered table-hover table-light">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Formation</th>
-        <th>Formateur</th>
-        <th>Debut</th>
-        <th>Fin</th>
-        <th>
-          Action
-          <a
-            class="btn btn-info"
-            routerLink="/session/admin/insert"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Ajouter</a
-          >
-        </th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let session of sessions">
-      <tr>
-        <td>{{ session.id }}</td>
-        <td>{{ session.formation }}</td>
-        <td>{{ session.instructor }}</td>
-        <td>{{ session.startDate }}</td>
-        <td>{{ session.endDate }}</td>
-        <td>
-          <a
-            class="btn btn-info"
-            routerLink="/session/admin/edit/{{ session.id }}"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Editer</a
-          >
-          <a
-            class="btn btn-info ms-3"
-            routerLink="/evalsession/admin/{{ session.id }}"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Evaluations</a
-          >
-          <button class="btn btn-warning ms-3">Supprimer</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container">
+    <table class="table table-bordered table-hover table-light">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Formation</th>
+          <th>Formateur</th>
+          <th>Debut</th>
+          <th>Fin</th>
+          <th>
+            Action
+            <a
+              class="btn btn-info"
+              routerLink="/session/admin/insert"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Ajouter</a
+            >
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let session of sessions">
+        <tr>
+          <td>{{ session.id }}</td>
+          <td>{{ session.formation }}</td>
+          <td>{{ session.instructor }}</td>
+          <td>{{ session.startDate }}</td>
+          <td>{{ session.endDate }}</td>
+          <td>
+            <a
+              class="btn btn-info"
+              routerLink="/session/admin/edit/{{ session.id }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Editer</a
+            >
+            <button class="btn btn-warning ms-3">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
 <router-outlet></router-outlet>

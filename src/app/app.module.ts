@@ -39,6 +39,8 @@ import { AccueilModule } from './accueil/accueil.module';
         PresenceModule,
         EvaluationFormModule,
         NavbarModule
+
 ]
+
 })
 export class AppModule {}
