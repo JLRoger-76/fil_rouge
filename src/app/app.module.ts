@@ -11,10 +11,10 @@ import { NavbarModule } from "./navbar/navbar.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationModule } from './registration/registration.module';
 import { RouterModule } from '@angular/router';
-import { PresenceComponent } from './registration/presence/presence.component';
 import { PresenceModule } from './registration/presence/presence/presence.module';
 import { EvaluationFormModule } from './evaluation-form/evaluation-form.module';
 import { InstructorModule } from './instructor/instructor.module';
+import { AccueilModule } from './accueil/accueil.module';
 
 @NgModule({
     declarations: [
@@ -27,6 +27,7 @@ import { InstructorModule } from './instructor/instructor.module';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
+        AccueilModule,
         FormationModule,
         InstructorModule,
         SessionModule,

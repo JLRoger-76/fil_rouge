@@ -16,8 +16,8 @@ export class FormationAdminComponent implements OnInit {
   }
   
   onDelete(id:number){
-    this.service.deleteTraining(id);
-    this.trainings = this.service.getAll();
+    //this.service.deleteTraining(id);
+    //this.trainings = this.service.getAll();
   }
 
 }

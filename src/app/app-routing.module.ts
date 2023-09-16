@@ -17,6 +17,7 @@ import { InscriptionFormComponent } from './registration/inscription-form/inscri
 import { PresenceComponent } from './registration/presence/presence.component';
 import { EvaluationFormComponent } from './evaluation-form/evaluation-form/evaluation-form.component';
 import { EvalsessionAdminComponent } from './evaluation-form/evalsession-admin/evalsession-admin.component';
+import { AccueilComponent } from './accueil/accueil/accueil.component';
 
 
 const routes: Routes = [ 
@@ -37,10 +38,10 @@ const routes: Routes = [
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
   {   path: 'evalsession/admin/:id',component:EvalsessionAdminComponent},
-  {   path: '', redirectTo: '/theme', pathMatch: 'full'},
-  {   path: 'registration/inscription-form',component: InscriptionFormComponent,
-  },
+  {   path: 'registration/inscription-form',component: InscriptionFormComponent},
   {   path: 'evaluation-form', component: EvaluationFormComponent },
+  {   path: 'accueil', component: AccueilComponent },
+  {   path: '', redirectTo: '/accueil', pathMatch: 'full'},
 ]
 
 @NgModule({
