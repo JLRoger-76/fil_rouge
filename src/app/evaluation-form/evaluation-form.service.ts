@@ -29,8 +29,10 @@ export class EvaluationFormService {
     let selectedEvaluations:Evaluation[] = [];
     this.evaluations.forEach(evaluation=>{
       if(evaluation.idSession==id)
+     
       selectedEvaluations.push(evaluation)       
-      })         
+      })   
+      console.log(selectedEvaluations)      
     return selectedEvaluations;
   } 
 

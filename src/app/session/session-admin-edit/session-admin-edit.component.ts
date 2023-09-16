@@ -45,6 +45,7 @@ export class SessionAdminEditComponent implements OnInit{
       this.trainings=[];
     } 
   }
+ 
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.sessionForm.value);

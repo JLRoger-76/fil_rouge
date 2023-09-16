@@ -11,16 +11,17 @@ export class InstructorService implements OnInit {
   constructor() { }
   public instructors: Instructor[] = [
     {id : 0,firstName:"John",lastName:"Doe",phoneNumber:"0642151254",
-    address:"Lille",skill:[{id:0,idInstructor : 0,experience:5,idTraining:0},],session:"" },
+    address:"Lille",skill:[{id:0,idInstructor : 0,experience:5,idTraining:0},{id:1,idInstructor : 0,experience:2,idTraining:3}],session:"" },
     {id : 1,firstName:"Alice",lastName:"Game",phoneNumber:"0642151254",
-    address:"Lille",skill:[{id:1,idInstructor : 1,experience:2,idTraining:1},
-      {id:2,idInstructor : 1,experience:5,idTraining:2},],session:"" },
+    address:"Lille",skill:[{id:2,idInstructor : 1,experience:2,idTraining:1},
+      {id:3,idInstructor : 1,experience:5,idTraining:5},],session:"" },
   ]
 
   public skills: Skill[] = [
     {id:0,idInstructor : 0,experience:5,idTraining:0},
-    {id:1,idInstructor : 1,experience:2,idTraining:1},
-    {id:2,idInstructor : 1,experience:5,idTraining:2},
+    {id:1,idInstructor : 0,experience:2,idTraining:3},
+    {id:2,idInstructor : 1,experience:2,idTraining:1},
+    {id:3,idInstructor : 1,experience:5,idTraining:5},
   ]
 
   public trainings: Training[] = [

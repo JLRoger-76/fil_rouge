@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Training } from './formation';
 import { Theme } from '../theme/theme';
+import { Session } from '../session/session';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class FormationService {
       {id : 5, name :"Langages de développement",parent:"Informatique",children:["Langages du WEB"],formations:["JAVA","C#","C++"]},
       {id : 6, name :"Langages du WEB",parent:"Langages de développement",children:[],formations:["PHP","Javascript","Ajax"]},
     ]
+    
+    public sessions: Session[] = [
+      {id : 0,formation:"Java débutant",instructor:"Doe",startDate:"01/01/2024",endDate:"05/01/2024",address:"Lille"},
+    ]
 
   public selectedThemes:Array<any> = [];
   
@@ -43,6 +48,10 @@ export class FormationService {
 
   public getAll(): Training[] {      
     return this.trainings;
+  }
+
+  public getAllSession(): Session[] {      
+    return this.sessions;
   }
 
   public getTrainingsOfTheme(id:number): Training[] {
