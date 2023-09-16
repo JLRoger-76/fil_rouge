@@ -1,8 +1,8 @@
 <div id="backimage">
-  <!-- <app-navbar></app-navbar> -->
+  <app-navbar></app-navbar>
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
-    <h3>Gestion des evaluations de la session</h3>
+    <h3>Gestion des sessions</h3>
   </div>
   <div class="container">
     <table class="table table-bordered table-hover table-light">
@@ -20,7 +20,7 @@
           <th>Technique d'animations</th>
           <th>Satisfaction</th>
           <th>Recommandation</th>
-          <th>Autres Projet</th>
+          <th>Autres Projets</th>
         </tr>
       </thead>
       <tbody *ngFor="let evaluation of evaluations">
@@ -43,3 +43,4 @@
     </table>
   </div>
 </div>
+<router-outlet></router-outlet>

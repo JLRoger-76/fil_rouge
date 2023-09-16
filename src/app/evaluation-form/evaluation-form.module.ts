@@ -5,18 +5,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from '../../app/app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
+import { EvalsessionAdminComponent } from './evalsession-admin/evalsession-admin.component';
+import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
-  declarations: [EvaluationFormComponent],
+  declarations: [
+    EvaluationFormComponent,
+    EvalsessionAdminComponent
+  ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
+    NavbarModule,
+    AppRoutingModule
   ],
-
-  providers: [],
-  bootstrap: [],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ]
 })
 export class EvaluationFormModule {}

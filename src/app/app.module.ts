@@ -8,7 +8,6 @@ import { ThemeAdminComponent } from './theme/theme-admin/theme-admin.component';
 import { SkillModule } from './skill/skill.module';
 import { SessionModule } from './session/session.module';
 import { NavbarModule } from "./navbar/navbar.module";
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationModule } from './registration/registration.module';
 import { RouterModule } from '@angular/router';
@@ -27,6 +26,7 @@ import { InstructorModule } from './instructor/instructor.module';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        ReactiveFormsModule,
         FormationModule,
         InstructorModule,
         SessionModule,
@@ -36,6 +36,7 @@ import { InstructorModule } from './instructor/instructor.module';
         RegistrationModule,
         RouterModule,
         PresenceModule,
+        EvaluationFormModule,
         NavbarModule
 ]
 })

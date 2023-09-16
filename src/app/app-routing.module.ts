@@ -16,14 +16,13 @@ import { RegistrationFormComponent } from './registration/registration-form/regi
 import { InscriptionFormComponent } from './registration/inscription-form/inscription-form.component';
 import { PresenceComponent } from './registration/presence/presence.component';
 import { EvaluationFormComponent } from './evaluation-form/evaluation-form/evaluation-form.component';
+import { EvalsessionAdminComponent } from './evaluation-form/evalsession-admin/evalsession-admin.component';
 
-const routes: Routes = [
 
-
-  
-  { path: 'registration', component: RegistrationFormComponent },
-  { path: 'IT-presence', component: PresenceComponent },
-   {   path: 'theme', component: ThemeComponent },
+const routes: Routes = [ 
+  {   path: 'registration/:id', component: RegistrationFormComponent },
+  {   path: 'IT-presence', component: PresenceComponent },
+  {   path: 'theme', component: ThemeComponent },
   {   path: 'theme/admin', component: ThemeAdminComponent},
   {   path: 'formation/admin', component: FormationAdminComponent},
   {   path: 'instructor/admin', component: InstructorAdminComponent},
@@ -37,13 +36,11 @@ const routes: Routes = [
   {   path: 'session/admin/insert', component: SessionAdminEditComponent },
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
+  {   path: 'evalsession/admin/:id',component:EvalsessionAdminComponent},
   {   path: '', redirectTo: '/theme', pathMatch: 'full'},
-
-  {
-    path: 'registration/inscription-form',
-    component: InscriptionFormComponent,
+  {   path: 'registration/inscription-form',component: InscriptionFormComponent,
   },
-  { path: 'evaluation-form', component: EvaluationFormComponent },
+  {   path: 'evaluation-form', component: EvaluationFormComponent },
 ]
 
 @NgModule({
