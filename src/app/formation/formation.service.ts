@@ -32,18 +32,19 @@ export class FormationService {
       {id : 0,formation:"Java débutant",instructor:"Doe",startDate:"01/01/2024",endDate:"05/01/2024",address:"Lille"},
     ]
 
-  public selectedThemes:Array<any> = [];
+  
   
   public getselectedThemesOfTraining(id:number):any[]{
+    let selectedThemes:Array<any> = [];
     let training:Training|undefined=this.getTrainingById(id);//training
     let themesTraining:string[]|undefined=training?.theme;//tableau de ses themes
     this.themes.forEach(theme=> {     
       let selectedTheme:any=theme;
       selectedTheme.selected=themesTraining?.some(x => x===theme.name);
       // cherche si le theme en cours est présent dans le themeTraining
-      this.selectedThemes.push(theme);
+      selectedThemes.push(theme);
     })
-    return this.selectedThemes;
+    return selectedThemes;
   }
 
   public getAll(): Training[] {      
