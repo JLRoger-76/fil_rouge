@@ -3,6 +3,8 @@ import { EvaluationFormService } from '../evaluation-form.service';
 import { Evaluation } from '../evaluation';
 import { ActivatedRoute } from '@angular/router';
 
+import {HttpClient} from "@angular/common/http";
+
 @Component({
   selector: 'app-evalsession-admin',
   templateUrl: './evalsession-admin.component.html',

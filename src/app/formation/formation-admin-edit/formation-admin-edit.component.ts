@@ -3,6 +3,7 @@ import { Training } from '../formation';
 import { ActivatedRoute } from '@angular/router';
 import { FormationService } from '../formation.service';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-formation-admin-edit',

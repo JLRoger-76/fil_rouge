@@ -10,12 +10,12 @@ export class FormationService {
 
   constructor() { }
   public trainings: Training[] = [
-    {id : 0, title : "Java initiation", price : 500, content:"",theme:["Langages de développement"]},
-    {id : 1, title : "Java avancé", price : 1500, content:"",theme:["Langages de développement"]},
-    {id : 2, title : "Java pro", price : 1800, content:"",theme:["Langages de développement"]},
-    {id : 3, title : "PHP", price : 1300, content:"",theme:["Langages du WEB"]},
-    {id : 4, title : "Javascript", price : 1300, content:"",theme:["Langages du WEB"]},
-    {id : 5, title : "Ajax", price : 1300, content:"",theme:["Langages du WEB"]},
+    {id : 0, title : "Java initiation", price : 500, content:"Formation Java initiation ouvert à tous",theme:["Langages de développement"]},
+    {id : 1, title : "Java avancé", price : 1500, content:"formation Java avancé bac+2",theme:["Langages de développement"]},
+    {id : 2, title : "Java pro", price : 1800, content:"Formation Java pro bac+3",theme:["Langages de développement"]},
+    {id : 3, title : "PHP", price : 1300, content:"Formation PHP ouvert à tous",theme:["Langages du WEB"]},
+    {id : 4, title : "Javascript", price : 1300, content:"Formation Javascript ouvert à tous",theme:["Langages du WEB"]},
+    {id : 5, title : "Ajax", price : 1300, content:"Formation Ajax ouvert à tous",theme:["Langages du WEB"]},
   ] 
 
     public themes: Array<Theme> = [

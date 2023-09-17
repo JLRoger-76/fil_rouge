@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InstructorService } from '../instructor.service';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { Instructor } from '../instructor';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-instructor-admin-edit',

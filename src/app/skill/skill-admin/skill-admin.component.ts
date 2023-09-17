@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SkillService } from '../skill.service';
 import { Skill } from '../skill';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-skill-admin',

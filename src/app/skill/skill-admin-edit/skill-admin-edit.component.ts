@@ -5,6 +5,7 @@ import { InstructorService } from 'src/app/instructor/instructor.service';
 import { Skill } from '../skill';
 import { Training } from 'src/app/formation/formation';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-skill-admin-edit',

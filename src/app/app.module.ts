@@ -16,6 +16,8 @@ import { EvaluationFormModule } from './evaluation-form/evaluation-form.module';
 import { InstructorModule } from './instructor/instructor.module';
 import { AccueilModule } from './accueil/accueil.module';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -25,6 +27,7 @@ import { AccueilModule } from './accueil/accueil.module';
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         ReactiveFormsModule,
         AccueilModule,
