@@ -10,19 +10,19 @@ export class EvaluationFormService {
   constructor() {}
   public evaluations: Evaluation[] = [
     {id:1,
-      receptionScore:1,
-      environmentScore:1,
-      contentScore:1,
-      pedagogyScore:1,
-      skillScore:1,
-      upTimeScore:1,
-      answersScore:1,
-      facilitationScore:1,
-      satisfactionScore:1,
+      receptionScore:4,
+      environmentScore:4,
+      contentScore:3,
+      pedagogyScore:5,
+      skillScore:5,
+      upTimeScore:4,
+      answersScore:3,
+      facilitationScore:3,
+      satisfactionScore:3,
       recommandationScore:"OK",
       trainingProject:"non",
       idSession:0,
-      idStudent:1
+      student:"Jean Emar"
     }
   ]
   public getAllBySession(id:number): Evaluation[] { 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Session } from '../session';
 import { SessionService } from '../session.service';
@@ -8,6 +8,8 @@ import { FormationService } from 'src/app/formation/formation.service';
 import { Training } from 'src/app/formation/formation';
 import { InstructorService } from 'src/app/instructor/instructor.service';
 import { Instructor } from 'src/app/instructor/instructor';
+import {HttpClient} from "@angular/common/http";
+
 @Component({
   selector: 'app-session-admin-edit',
   templateUrl: './session-admin-edit.component.html',

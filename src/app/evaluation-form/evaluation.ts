@@ -12,5 +12,5 @@ export interface Evaluation {
     recommandationScore:string;
     trainingProject:string;
     idSession:number;
-    idStudent:number;
+    student:string;
 }

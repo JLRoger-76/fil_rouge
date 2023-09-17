@@ -3,6 +3,7 @@ import { Training } from '../formation';
 import { ActivatedRoute } from '@angular/router';
 import { FormationService } from '../formation.service';
 import { Session } from 'src/app/session/session';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-formation-detail',
