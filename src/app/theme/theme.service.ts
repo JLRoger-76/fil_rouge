@@ -31,7 +31,7 @@ export class ThemeService {
 
 
   create(theme:Theme): Observable<Theme> {
-    return this.httpClient.post<Theme>(this.apiUrl + '/themes/', JSON.stringify(theme), this.httpOptions)
+    return this.httpClient.post<Theme>(this.apiUrl + '/themes/create', JSON.stringify(theme), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
@@ -51,14 +51,14 @@ export class ThemeService {
   }
 
   update(id:number, theme:Theme): Observable<Theme> {
-    return this.httpClient.put<Theme>(this.apiUrl + '/themes/' + id, JSON.stringify(theme), this.httpOptions)
+    return this.httpClient.put<Theme>(this.apiUrl + '/themes/' + id + "/update", JSON.stringify(theme), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
   delete(id:number){
-    return this.httpClient.delete<Theme>(this.apiUrl + '/themes/' + id, this.httpOptions)
+    return this.httpClient.delete<Theme>(this.apiUrl + '/themes/' + id+ "/delete", this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )

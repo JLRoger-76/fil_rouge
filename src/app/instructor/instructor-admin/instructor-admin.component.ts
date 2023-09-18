@@ -14,7 +14,12 @@ export class InstructorAdminComponent implements OnInit {
   instructors: Instructor[] = [];
   
   ngOnInit(): void {
-    this.instructors = this.service.getAll();
+    this.service.getAll2().subscribe((data: Instructor[])=>{
+      console.log(data);
+      this.instructors = data;
+    }) 
+    // 
+    //this.instructors = this.service.getAll();
   }
 
 }
