@@ -18,6 +18,14 @@
     background-size: cover;
     min-height: 100vh;
 }
+
+#backimageaccueil{
+    background-image: url('/assets/img/istockphoto-1195565899-612x612.jpgITTr');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
 #jumbotronclient{
     background-image: url("/assets/img/istockphoto-1303821441-612x612.jpg");
     background-size: cover;
