@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../theme.service';
 import { Theme } from '../theme';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {HttpClient} from "@angular/common/http";
+
 
 @Component({
   selector: 'app-theme-admin',
@@ -15,7 +15,7 @@ export class ThemeAdminComponent implements OnInit {
   constructor(private service: ThemeService) { } 
 
   themeForm = new FormGroup({
-    id:new FormControl(0),
+    id:new FormControl(0,Validators.required),
     name: new FormControl('',[Validators.required,Validators.minLength(3)]),
     parent:new FormControl(''),
     children:new FormControl([""]),
@@ -25,6 +25,12 @@ export class ThemeAdminComponent implements OnInit {
   themes: Theme[] = this.service.getAll();
 
   ngOnInit(): void {
+    //
+    this.service.getAll2().subscribe((data: Theme[])=>{
+      console.log(data);
+      this.themes = data;
+    }) 
+    // 
      this.themes = this.service.getAll();
   }
   get f(){
@@ -33,15 +39,20 @@ export class ThemeAdminComponent implements OnInit {
   onEdit(theme:Theme){
     this.themeForm.setValue(theme)
   }
-  onClear(){
-    this.themeForm.reset();
-  }
+
   onDelete(id:number){
-     this.service.deleteTheme(id);
+    this.service.delete(id).subscribe(res => {
+        console.log('Theme deleted!')    
+    })
+    this.service.deleteTheme(id);
      this.themes = this.service.getAll();
   }
+
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.themeForm.value);
-  }
+    //this.service.create(this.themeForm.value).subscribe(res => {
+    //  console.log('Theme created!')
+    //})
+  } 
 }

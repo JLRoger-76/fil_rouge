@@ -5,7 +5,7 @@
     <h3>Gestion des themes</h3>
   </div>
   <div class="container">
-    <form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="themeForm" (ngSubmit)="onSubmit()" novalidate>
       <table class="table table-bordered table-hover table-light">
         <thead>
           <tr>
@@ -17,7 +17,17 @@
         </thead>
         <tbody>
           <tr class="table-secondary">
-            <td></td>
+            <td>
+              <input
+                type="text"
+                style="max-width: 50px"
+                readonly
+                class="form-control"
+                id="id"
+                value="0"
+                formControlName="id"
+              />
+            </td>
             <td>
               <input
                 type="text"
@@ -58,9 +68,6 @@
                 [disabled]="!themeForm.valid"
               >
                 Enregistrer
-              </button>
-              <button class="btn btn-warning ms-1" (click)="onClear()">
-                Annuler
               </button>
             </td>
           </tr>
