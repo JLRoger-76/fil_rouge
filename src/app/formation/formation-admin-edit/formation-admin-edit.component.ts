@@ -31,11 +31,11 @@ export class FormationAdminEditComponent  implements OnInit{
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     if (id){
-      this.service.getById(id).subscribe((data: Training)=>{
-        console.log(data);
-        this.training = data;
-      }) 
-      //this.training=this.service.getTrainingById(id)!;
+      //this.service.getById(id).subscribe((data: Training)=>{
+      //  console.log(data);
+      //  this.training = data;
+      //}) 
+      this.training=this.service.getTrainingById(id)!;
       this.trainingForm.setValue(this.training)
     } 
      this.selectedThemes=this.service.getselectedThemesOfTraining(id); 
