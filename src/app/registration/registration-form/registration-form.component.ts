@@ -30,7 +30,25 @@ export class RegistrationFormComponent implements OnInit {
   get f() {
     return this.FormB.controls;
   }
+  updateUser() {
+    this.service.updateUserById(this.id, this.FormB.value).subscribe((data) => {
+      console.log('User updated', data);
+    });
+  }
 
+  deleteUser() {
+    this.service.deleteUserById(this.id).subscribe((data) => {
+      console.log('User deleted', data);
+      // Vous pouvez effectuer des actions supplémentaires ici, comme rediriger l'utilisateur.
+    });
+  }
+
+  getUser() {
+    this.service.deleteUserById(this.id).subscribe((data) => {
+      console.log('User deleted', data);
+      // Vous pouvez afficher les données de l'utilisateur dans le formulaire ou ailleurs dans le composant.
+    });
+  }
   
   onSubmit() {
     console.log(this.FormB.value);
