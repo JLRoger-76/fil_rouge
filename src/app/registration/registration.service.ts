@@ -12,23 +12,13 @@ const httpOptions = {
 })
 export class RegistrationService {
   constructor(private http: HttpClient) {}
-  // Une fonction pour récupérer des données depuis l'API en fonction de l'email
-  // getDonneesById(email: string): Observable<any> {
-  //   const params = { email: email };
-  //   return this.http.get(USER_URL + '/{id}', { params: params });
-  // }
-
-  //une fonction pour envoyer des données à l'API
-  // enregistrerDonnees(data: any): Observable<any> {
-  //   return this.http.post(USER_URL, data);
-  // }
 
   register(user: any): Observable<any> {
     this.getAll().subscribe(
       (data) => console.table(data),
       (err) => console.log(err)
     );
-    // const params = { email: email };
+
     return this.http.post(
       'http://localhost:8080/api/users/register',
       {
@@ -47,5 +37,20 @@ export class RegistrationService {
   }
   getAll() {
     return this.http.get('http://localhost:8080/api/users/all', httpOptions);
+  }
+  getUserById(id: number): Observable<any> {
+    const url = `${USER_URL}/${id}`;
+    return this.http.get(url, httpOptions);
+  }
+  // Méthode pour supprimer un utilisateur par ID
+  deleteUserById(id: number): Observable<any> {
+    const url = `${USER_URL}/${id}`;
+    return this.http.delete(url, httpOptions);
+  }
+
+  // Méthode pour mettre à jour un utilisateur par ID
+  updateUserById(id: number, user: any): Observable<any> {
+    const url = `${USER_URL}/${id}`;
+    return this.http.put(url, user, httpOptions);
   }
 }
