@@ -38,7 +38,7 @@ const routes: Routes = [
   {   path: 'formation/:id', component: FormationListComponent },
   {   path: 'formation/detail/:id', component: FormationDetailComponent },
   {   path: 'evalsession/admin/:id',component:EvalsessionAdminComponent},
-  {   path: 'registration/inscription-form',component: InscriptionFormComponent},
+  {   path: 'registration/:id/inscription-form',component: InscriptionFormComponent},
   {   path: 'evaluation-form', component: EvaluationFormComponent },
   {   path: 'accueil', component: AccueilComponent },
   {   path: '', redirectTo: '/accueil', pathMatch: 'full'},

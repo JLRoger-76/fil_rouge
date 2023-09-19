@@ -34,7 +34,7 @@ export class FormationService {
     ]
     
     public sessions: Session[] = [
-      {id : 0,formation:"Java débutant",instructor:"Doe",startDate:"01/01/2024",endDate:"05/01/2024",address:"Lille"},
+      {id : 1,formation:"Java débutant",instructor:"Doe",startDate:"01/01/2024",endDate:"05/01/2024",address:"Lille"},
     ]
 
     private apiUrl = "http://localhost:8080/api";

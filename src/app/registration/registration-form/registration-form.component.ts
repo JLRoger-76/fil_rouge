@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Routes } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RegistrationService } from '../registration.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { RegistrationService } from '../registration.service';
   styleUrls: ['./registration-form.component.css'],
 })
 export class RegistrationFormComponent implements OnInit {
-  constructor(private route: ActivatedRoute,private service:RegistrationService) {}
+  constructor(private route: ActivatedRoute,
+    private service:RegistrationService,
+    private router: Router) {}
   
   public id:number =0;
   registeredUser: any;
@@ -29,25 +31,7 @@ export class RegistrationFormComponent implements OnInit {
     return this.FormB.controls;
   }
 
-  updateUser() {
-    this.service.updateUserById(this.id, this.FormB.value).subscribe((data) => {
-      console.log('User updated', data);
-    });
-  }
-
-  deleteUser() {
-    this.service.deleteUserById(this.id).subscribe((data) => {
-      console.log('User deleted', data);
-      // Vous pouvez effectuer des actions supplémentaires ici, comme rediriger l'utilisateur.
-    });
-  }
-
-  getUser() {
-    this.service.deleteUserById(this.id).subscribe((data) => {
-      console.log('User deleted', data);
-      // Vous pouvez afficher les données de l'utilisateur dans le formulaire ou ailleurs dans le composant.
-    });
-  }
+  
   onSubmit() {
     console.log(this.FormB.value);
     console.log(this.id);
@@ -56,5 +40,9 @@ export class RegistrationFormComponent implements OnInit {
     //   this.registeredUser = data;
     //   console.log(this.registeredUser);
     // });
+    if (this.id==0) this.router.navigate(['theme/admin'])
+    else
+    this.router.navigate(['IT-presence']);
+
   }
 }
