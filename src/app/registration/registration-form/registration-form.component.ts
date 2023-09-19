@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Registration } from '../registration';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Routes } from '@angular/router';
+import { RegistrationService } from '../registration.service';
 
 @Component({
   selector: 'app-registration-form',
@@ -9,7 +10,9 @@ import { ActivatedRoute, Routes } from '@angular/router';
   styleUrls: ['./registration-form.component.css'],
 })
 export class RegistrationFormComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,private service:RegistrationService) {}
+  
+  public id:number =0;
   ngOnInit(): void {}
   FormB = new FormGroup({
     email: new FormControl(''),
