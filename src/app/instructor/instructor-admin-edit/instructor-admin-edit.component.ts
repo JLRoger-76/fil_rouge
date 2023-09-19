@@ -29,11 +29,11 @@ export class InstructorAdminEditComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     if (id){
-      this.service.getById(id).subscribe((data: Instructor)=>{
-        console.log(data);
-        this.instructor = data;
-      }) 
-      //this.instructor=this.service.getById(id);
+      //this.service.getInstructorById(id).subscribe((data: Instructor)=>{
+      //  console.log(data);
+      //  this.instructor = data;
+      //}) 
+      this.instructor=this.service.getInstructorById(id)!;
       this.instructorForm.setValue(this.instructor);
 
     } 
