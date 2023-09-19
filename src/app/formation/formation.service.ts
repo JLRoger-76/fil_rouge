@@ -92,16 +92,15 @@ export class FormationService {
   
   public getselectedThemesOfTraining(id:number):any[]{
     let selectedThemes:Array<any> = [];
-    this.getById(id).subscribe((data: Training)=>{
-      console.log(data);
-      let themesTraining:string[]|undefined=data.theme;//tableau de ses themes
+    let training=this.getTrainingById(id);
+      let themesTraining:string[]|undefined=training!.theme;//tableau de ses themes
       this.themes.forEach(theme=> {     
         let selectedTheme:any=theme;
         selectedTheme.selected=themesTraining?.some(x => x===theme.name);
         // cherche si le theme en cours est présent dans le themeTraining
         selectedThemes.push(theme);
       })
-    })
+    
     return selectedThemes;
   }
 

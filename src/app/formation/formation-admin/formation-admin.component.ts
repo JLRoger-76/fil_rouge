@@ -18,7 +18,7 @@ export class FormationAdminComponent implements OnInit {
       this.trainings = data;
     }) 
     // 
-    this.trainings = this.service.getAll();
+    //this.trainings = this.service.getAll();
   }
   
   onDelete(id:number){
@@ -29,8 +29,8 @@ export class FormationAdminComponent implements OnInit {
       console.log(data);
       this.trainings = data;
     }) 
-    this.service.deleteTraining(id);
-    this.trainings = this.service.getAll();
+    //this.service.deleteTraining(id);
+    //this.trainings = this.service.getAll();
   }
 
 }

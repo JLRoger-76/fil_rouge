@@ -18,8 +18,8 @@ export class InstructorAdminComponent implements OnInit {
       console.log(data);
       this.instructors = data;
     }) 
-    // 
-    //this.instructors = this.service.getAll();
+     
+    this.instructors = this.service.getAll();
   }
 
 }
