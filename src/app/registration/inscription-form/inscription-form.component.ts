@@ -31,7 +31,27 @@ public id:number =0;
 
   });
 
+  updateUser() {
+    this.registrationService
+      .updateUserById(this.id, this.FormA.value)
+      .subscribe((data) => {
+        console.log('User updated', data);
+      });
+  }
 
+  deleteUser() {
+    this.registrationService.deleteUserById(this.id).subscribe((data) => {
+      console.log('User deleted', data);
+      // Vous pouvez effectuer des actions supplémentaires ici, comme rediriger l'utilisateur.
+    });
+  }
+
+  getUser() {
+    this.registrationService.getUserById(this.id).subscribe((data) => {
+      console.log('User retrieved', data);
+      // Vous pouvez afficher les données de l'utilisateur dans le formulaire ou ailleurs dans le composant.
+    });
+  }
   get f() {
     return this.FormA.controls;
   }
