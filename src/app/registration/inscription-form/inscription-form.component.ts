@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { RegistrationService } from '../registration.service';
+
 @Component({
   selector: 'app-inscription-form',
   templateUrl: './inscription-form.component.html',
   styleUrls: ['./inscription-form.component.css'],
 })
 export class InscriptionFormComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private registrationService: RegistrationService) {}
+
+public id:number =0;
   ngOnInit(): void {}
   FormA = new FormGroup({
     firstName: new FormControl(''),
@@ -26,6 +30,7 @@ export class InscriptionFormComponent implements OnInit {
     position: new FormControl(''),
 
   });
+
 
   get f() {
     return this.FormA.controls;
