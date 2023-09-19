@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-inscription-form',
@@ -12,12 +12,19 @@ export class InscriptionFormComponent implements OnInit {
   FormA = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
-    email: new FormControl(''),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+    ]),
     password: new FormControl(''),
     address: new FormControl(''),
-
     city: new FormControl(''),
     postalCode: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    companyName: new FormControl(''),
+    position: new FormControl(''),
+
   });
 
   get f() {
@@ -26,5 +33,26 @@ export class InscriptionFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.FormA.value);
+  }
+  updateUser() {
+    this.registrationService
+      .updateUserById(this.id, this.FormA.value)
+      .subscribe((data) => {
+        console.log('User updated', data);
+      });
+  }
+
+  deleteUser() {
+    this.registrationService.deleteUserById(this.id).subscribe((data) => {
+      console.log('User deleted', data);
+      // Vous pouvez effectuer des actions supplémentaires ici, comme rediriger l'utilisateur.
+    });
+  }
+
+  getUser() {
+    this.registrationService.getUserById(this.id).subscribe((data) => {
+      console.log('User retrieved', data);
+      // Vous pouvez afficher les données de l'utilisateur dans le formulaire ou ailleurs dans le composant.
+    });
   }
 }

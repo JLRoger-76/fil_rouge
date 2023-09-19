@@ -20,6 +20,7 @@
           aria-label="Prénom"
         />
       </div>
+
       <div class="mb-3">
         <label for="lastName" class="form-label">Nom de famille</label>
         <input
@@ -32,14 +33,51 @@
         />
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
+
+        <label for="companyName" class="form-label">Nom de l'entreprise</label>
+        <input
+          type="text"
+          class="form-control"
+          id="companyName"
+          placeholder="Nom de l'entreprise"
+          formControlName="companyName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="position" class="form-label">Poste</label>
+        <input
+          type="text"
+          class="form-control"
+          id="position"
+          placeholder="Poste"
+          formControlName="position"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Numéro de téléphone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          formControlName="phoneNumber"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">Email</label>
         <input
           type="email"
           class="form-control"
-          id="email"
-          placeholder="Email"
-          formControlName="email"
-        />
+          id="username"
+          placeholder="username"
+          formControlName="username"
+
+      </div>
+      <div
+        *ngIf="f['username'].touched && f['username'].invalid"
+        class="alert alert-danger"
+      >
+        Veuillez fournir une adresse électronique valide
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Mot de passe</label>
@@ -80,7 +118,9 @@
         />
       </div>
       <div class="mb-3">
-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!FormA.valid">
+          S'inscrire
+        </button>
       </div>
     </form>
   </div>
