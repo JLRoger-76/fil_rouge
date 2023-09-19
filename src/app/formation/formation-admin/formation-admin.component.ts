@@ -13,12 +13,12 @@ export class FormationAdminComponent implements OnInit {
   
   ngOnInit(): void {
     //
-    this.service.getAll2().subscribe((data: Training[])=>{
-      console.log(data);
-      this.trainings = data;
-    }) 
+    //this.service.getAll2().subscribe((data: Training[])=>{
+    //  console.log(data);
+    //  this.trainings = data;
+    //}) 
     // 
-    //this.trainings = this.service.getAll();
+    this.trainings = this.service.getAll();
   }
   
   onDelete(id:number){
