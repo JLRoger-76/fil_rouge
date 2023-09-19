@@ -60,7 +60,9 @@ export class RegistrationFormComponent implements OnInit {
     // });
     if (this.id==0) this.router.navigate(['theme/admin'])
     else
-    this.router.navigate(['IT-presence']);
+    if (this.id==-1)this.router.navigate(['IT-presence']);
+    else 
+    window.alert('Vous etes enregistré à la formation');
 
   }
 }
