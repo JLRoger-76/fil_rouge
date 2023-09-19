@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InstructorService } from '../instructor.service';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { Instructor } from '../instructor';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-instructor-admin-edit',
@@ -28,7 +29,11 @@ export class InstructorAdminEditComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     if (id){
-      this.instructor=this.service.getInstructorById(id)!;
+      this.service.getById(id).subscribe((data: Instructor)=>{
+        console.log(data);
+        this.instructor = data;
+      }) 
+      //this.instructor=this.service.getById(id);
       this.instructorForm.setValue(this.instructor);
 
     } 

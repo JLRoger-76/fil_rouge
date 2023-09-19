@@ -2,7 +2,10 @@
   <app-navbar></app-navbar>
   <div id="jumbotron">
     <h1 class="mb-3 h2">IT Training</h1>
-    <h3>Gestion des expériences formateurs</h3>
+    <h3>
+      Gestion des expériences de {{ instructor.firstName }}
+      {{ instructor.lastName }}
+    </h3>
   </div>
   <div class="container">
     <form
@@ -50,6 +53,8 @@
                 type="number"
                 class="form-control"
                 id="experience"
+                min="1"
+                max="5"
                 formControlName="experience"
               />
               <input

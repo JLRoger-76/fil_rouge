@@ -14,11 +14,11 @@ export class FormationAdminEditComponent  implements OnInit{
   constructor(private service: FormationService,private route: ActivatedRoute) { } 
   
   trainingForm = new FormGroup({
-    id:new FormControl(0),
-    title: new FormControl('',[Validators.required,Validators.minLength(3)]),
-    price: new FormControl(0,Validators.required),
-    theme:new FormControl([''],Validators.required),
-    content: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    id:new FormControl(0,{ nonNullable: true, validators: Validators.required }),
+    title: new FormControl('',{ nonNullable: true, validators:[Validators.required,Validators.minLength(3)]}),
+    price: new FormControl(0,{ nonNullable: true, validators:Validators.required}),
+    theme:new FormControl([''],{ nonNullable: true, validators:Validators.required}),
+    content: new FormControl('',{ nonNullable: true, validators:[Validators.required,Validators.minLength(3)]}),
   });
   
   get f(){
@@ -31,8 +31,11 @@ export class FormationAdminEditComponent  implements OnInit{
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     if (id){
-      
-      this.training=this.service.getTrainingById(id)!;
+      this.service.getById(id).subscribe((data: Training)=>{
+        console.log(data);
+        this.training = data;
+      }) 
+      //this.training=this.service.getTrainingById(id)!;
       this.trainingForm.setValue(this.training)
     } 
      this.selectedThemes=this.service.getselectedThemesOfTraining(id); 
@@ -41,5 +44,10 @@ export class FormationAdminEditComponent  implements OnInit{
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.trainingForm.value);
-  }
+    this.service.create(this.trainingForm.getRawValue()).subscribe(res => {
+      console.log('Theme created!');
+  });
+};
 }
+
+

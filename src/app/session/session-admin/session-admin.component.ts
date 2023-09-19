@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../session.service';
 import { Session } from '../session';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-session-admin',

@@ -40,6 +40,7 @@
             aria-label="Default select example"
             (change)="selectInstructor($any($event.target).value)"
           >
+            <option selected>{{ session.formation }}</option>
             <option
               *ngFor="let training of trainings"
               [ngValue]="training.title"
@@ -65,13 +66,17 @@
         </div>
       </div>
       <div class="mb-3">
-        <label>Formateur</label>
+        <label
+          >Formateur (classé par expérience et par évaluation des
+          étudiants)</label
+        >
+
         <select
           class="form-select"
           aria-label="Default select example"
           formControlName="instructor"
         >
-          <option selected>Choisir un formateur</option>
+          <option selected>{{ session.instructor }}</option>
           <option
             [value]="instructor.id"
             *ngFor="let instructor of instructors"
@@ -169,9 +174,7 @@
         >
           Enregistrer
         </button>
-        <button type="submit" class="btn btn-warning">Annuler</button>
       </div>
     </form>
   </div>
 </div>
-<p>session-admin-edit works!</p>

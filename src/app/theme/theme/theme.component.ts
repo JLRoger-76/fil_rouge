@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../theme.service';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-theme',

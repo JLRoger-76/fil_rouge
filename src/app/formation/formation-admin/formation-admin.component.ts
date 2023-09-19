@@ -12,10 +12,23 @@ export class FormationAdminComponent implements OnInit {
   trainings: Training[] = [];
   
   ngOnInit(): void {
+    //
+    this.service.getAll2().subscribe((data: Training[])=>{
+      console.log(data);
+      this.trainings = data;
+    }) 
+    // 
     this.trainings = this.service.getAll();
   }
   
   onDelete(id:number){
+    this.service.delete(id).subscribe(res => {
+      console.log('Theme deleted!')    
+    })
+    this.service.getAll2().subscribe((data: Training[])=>{
+      console.log(data);
+      this.trainings = data;
+    }) 
     this.service.deleteTraining(id);
     this.trainings = this.service.getAll();
   }

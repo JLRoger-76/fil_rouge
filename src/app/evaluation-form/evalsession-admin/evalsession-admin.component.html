@@ -1,0 +1,45 @@
+<div id="backimage">
+  <app-navbar></app-navbar>
+  <div id="jumbotron">
+    <h1 class="mb-3 h2">IT Training</h1>
+    <h3>Evaluation de la session</h3>
+  </div>
+
+  <table class="table table-bordered table-hover table-light">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Etudiant</th>
+        <th>Réception</th>
+        <th>Environnement</th>
+        <th>Contenu</th>
+        <th>Pédagogie</th>
+        <th>Maitrise du sujet</th>
+        <th>Disponibilité</th>
+        <th>Réponses aux questions</th>
+        <th>Technique d'animations</th>
+        <th>Satisfaction</th>
+        <th>Recommandation</th>
+        <th>Autres Projets</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let evaluation of evaluations">
+      <tr>
+        <td>{{ evaluation.id }}</td>
+        <td>{{ evaluation.student }}</td>
+        <td>{{ evaluation.receptionScore }}</td>
+        <td>{{ evaluation.environmentScore }}</td>
+        <td>{{ evaluation.contentScore }}</td>
+        <td>{{ evaluation.pedagogyScore }}</td>
+        <td>{{ evaluation.skillScore }}</td>
+        <td>{{ evaluation.upTimeScore }}</td>
+        <td>{{ evaluation.answersScore }}</td>
+        <td>{{ evaluation.facilitationScore }}</td>
+        <td>{{ evaluation.satisfactionScore }}</td>
+        <td>{{ evaluation.recommandationScore }}</td>
+        <td>{{ evaluation.trainingProject }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

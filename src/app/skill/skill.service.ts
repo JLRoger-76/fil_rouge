@@ -10,8 +10,9 @@ export class SkillService {
   constructor() { }
   public skills: Skill[] = [
     {id:0,idInstructor : 0,experience:5,idTraining:0},
-    {id:1,idInstructor : 1,experience:2,idTraining:1},
-    {id:2,idInstructor : 1,experience:5,idTraining:2},
+    {id:1,idInstructor : 0,experience:2,idTraining:3},
+    {id:2,idInstructor : 1,experience:2,idTraining:1},
+    {id:3,idInstructor : 1,experience:5,idTraining:5},
   ]
 
   public trainings: Training[] = [

@@ -11,6 +11,7 @@
           <th>Id</th>
           <th>Nom</th>
           <th>Telephone</th>
+          <th>Moyenne évaluations</th>
           <th>
             Action
             <a
@@ -28,6 +29,7 @@
           <td>{{ instructor.id }}</td>
           <td>{{ instructor.firstName }} {{ instructor.lastName }}</td>
           <td>{{ instructor.phoneNumber }}</td>
+          <td>3.5</td>
           <td>
             <a
               class="btn btn-info ms-3"
@@ -42,6 +44,13 @@
               routerLinkActive="active"
               ariaCurrentWhenActive="page"
               >Compétences</a
+            >
+            <a
+              class="btn btn-info ms-3"
+              routerLink="/evalsession/admin/{{ instructor.id }}"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Evaluations</a
             >
             <button class="btn btn-warning ms-3">Supprimer</button>
           </td>

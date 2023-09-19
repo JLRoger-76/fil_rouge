@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { RegistrationService } from '../registration.service';
-
 @Component({
   selector: 'app-inscription-form',
   templateUrl: './inscription-form.component.html',
   styleUrls: ['./inscription-form.component.css'],
 })
 export class InscriptionFormComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private registrationService: RegistrationService
-  ) {}
-  public id: number = 0;
-
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-  }
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit(): void {}
   FormA = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -28,12 +19,12 @@ export class InscriptionFormComponent implements OnInit {
     ]),
     password: new FormControl(''),
     address: new FormControl(''),
-
     city: new FormControl(''),
     postalCode: new FormControl(''),
     phoneNumber: new FormControl(''),
     companyName: new FormControl(''),
     position: new FormControl(''),
+
   });
 
   get f() {
@@ -42,10 +33,6 @@ export class InscriptionFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.FormA.value);
-    // console.log(this.id);
-    this.registrationService
-      .register(this.FormA)
-      .subscribe((data) => console.log(data));
   }
   updateUser() {
     this.registrationService
