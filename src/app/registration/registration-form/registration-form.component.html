@@ -23,7 +23,7 @@
         />
       </div>
       <div
-        ngIf="f['username'].touched && f['username'].invalid"
+        *ngIf="f['username'].touched && f['username'].invalid"
         class="alert alert-danger"
       >
         Veuillez fournir une adresse électronique valide
@@ -58,7 +58,7 @@
   </div>
 </div>
 <!-- Affichage des données récupérées -->
-<div ngIf="registeredUser">
+<div *ngIf="registeredUser">
   <h3>Utilisateur enregistré :</h3>
   <p>Email: {{ registeredUser.email }}</p>
   <!-- Ajoutez d'autres champs ici selon les données que vous souhaitez afficher -->

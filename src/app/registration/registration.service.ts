@@ -57,4 +57,8 @@ export class RegistrationService {
     const url = `${USER_URL}/${id}`;
     return this.http.put(url, user, httpOptions);
   }
+
+
+ 
+
 }
