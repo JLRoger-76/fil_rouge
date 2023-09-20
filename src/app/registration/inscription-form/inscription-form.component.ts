@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RegistrationService } from '../registration.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { RegistrationService } from '../registration.service';
   styleUrls: ['./inscription-form.component.css'],
 })
 export class InscriptionFormComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private registrationService: RegistrationService) {}
+  constructor(private route: ActivatedRoute,
+     private registrationService: RegistrationService,
+     private router: Router) {}
 
 public id:number =0;
   ngOnInit(): void {}
@@ -58,6 +60,7 @@ public id:number =0;
 
   onSubmit() {
     console.log(this.FormA.value);
+    this.router.navigate(['IT-presence']);
   }
  
 }
