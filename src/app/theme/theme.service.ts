@@ -21,10 +21,15 @@ export class ThemeService {
 
   public themes: Array<Theme> = [
     {id : 0, name : "Domaine",parent:"", children:["Finance","Informatique","Management"],formations:[]},
-    {id : 1, name :"Finance",parent:"Domaine",children:[],formations:[]},
+    {id : 1, name :"Finance",parent:"Domaine",children:["Finance S-theme"],formations:[]},
+    {id : 7, name :"Finance S-theme",parent:"Finance",children:[],formations:[]},
     {id : 2, name :"Informatique",parent:"Domaine",children:["Réseaux","Langages de développement","Systèmes d'exploitation","Gestion de Projets"],formations:[]},
-    {id : 3, name :"Management",parent:"Domaine",children:[],formations:[]},
-    {id : 4, name :"Réseaux",parent:"Informatique",children:[],formations:[]},
+    {id : 3, name :"Management",parent:"Domaine",children:["Management S-theme"],formations:[]},
+    {id : 8, name :"Management S-theme",parent:"Management",children:["Management SS-theme 1","Management SS-theme 2"],formations:[]},
+    {id : 9, name :"Management SS-theme 1",parent:"Management S-theme",children:[],formations:[]},
+    {id : 10, name :"Management SS-theme 2",parent:"Management S-theme",children:[],formations:[]},
+    {id : 4, name :"Réseaux",parent:"Informatique",children:["Réseaux S-Theme"],formations:[]},
+    {id : 11, name :"Réseaux S-Theme",parent:"Réseaux",children:[],formations:[]},
     {id : 5, name :"Langages de développement",parent:"Informatique",children:["Langages du WEB"],formations:["JAVA","C#","C++"]},
     {id : 6, name :"Langages du WEB",parent:"Langages de développement",children:[],formations:["PHP","Javascript","Ajax"]},
   ]
