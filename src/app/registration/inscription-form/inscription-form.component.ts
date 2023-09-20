@@ -60,7 +60,7 @@ public id:number =0;
 
   onSubmit() {
     console.log(this.FormA.value);
-    this.router.navigate(['IT-presence']);
+    this.router.navigate(['registration/-1']);
   }
  
 }
